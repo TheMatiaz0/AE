@@ -1,7 +1,11 @@
 {
     "name": "AE",
     "rootNamespace": "AE",
-    "references": [],
+    "references": [
+        "GUID:a3bb8cf4b401b7440a7c77aa4d4316b8",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
