@@ -29,11 +29,6 @@ namespace AE
 
         private void Update()
         {
-            if (moveDirection == Vector3.zero)
-            {
-                return;
-            }
-
             CalculateMovement();
             CalculateGravity();
             ApplyMovement();
