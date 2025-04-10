@@ -7487,18 +7487,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b3e720251e294645a430de66ec16b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 5
+  walkSpeed: 6
   gravityMultiplier: 1
   mouseSensitivity: 0.3
   lookXLimit: 80
   cameraHolder: {fileID: 1817424916}
-  feet: {fileID: 420860906}
-  stepHeight: 0.3
-  stepSmoothing: 0.1
-  stepDistance: {x: 0.6, y: 0.7}
-  stepCheckLayers:
+  enableCameraRotationSway: 1
+  rotationSwayAmount: 10
+  rotationSwayLimit: 16
+  rotationSwaySmoothness: 10
+  inverseRotationSway: 1
+  enableMovementSway: 1
+  movementSwayAmount: 2
+  movementSwayLimit: 3
+  movementSwaySmoothness: 8.47
+  inverseMovementSway: 0
+  enableHeadbob: 1
+  bobAmplitude: 0.015
+  bobFrequency: 10
+  headbobSmoothing: 12
+  headbobTiltAmount: 1
+  headbobTiltSpeed: 8.02
+  bobCurve:
     serializedVersion: 2
-    m_Bits: 64
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  enableBreathing: 1
+  breatheSpeed: 1
+  breatheAmplitude: 0.0015
+  breathePitchAmount: 0.5
+  breatheTiltAmount: 0.2
 --- !u!114 &859804668
 MonoBehaviour:
   m_ObjectHideFlags: 0
