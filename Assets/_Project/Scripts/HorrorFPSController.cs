@@ -9,11 +9,13 @@ namespace AE
         [Header("Movement Settings")]
         [SerializeField] private float walkSpeed = 2.5f;
         [SerializeField] private float gravityMultiplier = 2.0f;
+        [SerializeField] private CharacterController characterController;
 
         [Header("Mouse Look Settings")]
         [SerializeField] private float mouseSensitivity = 2.0f;
         [SerializeField] private float lookXLimit = 80.0f;
         [SerializeField] private Transform cameraHolder;
+        [SerializeField] private Camera playerCamera;
 
         [Header("Camera Rotation Sway")]
         [SerializeField] private bool enableCameraRotationSway = true;
@@ -45,8 +47,6 @@ namespace AE
         [SerializeField] private float breathePitchAmount = 0.5f;
         [SerializeField] private float breatheTiltAmount = 0.2f;
 
-        private CharacterController characterController;
-        private Camera playerCamera;
         private Vector3 moveDirection;
         private float rotationX;
         private Vector2 inputMovement;
@@ -74,6 +74,7 @@ namespace AE
             initialCameraLocalRotation = playerCamera.transform.localRotation;
 
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private void Update()
