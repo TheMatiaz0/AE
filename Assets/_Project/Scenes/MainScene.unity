@@ -17672,10 +17672,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8936182422943000403, guid: eb1c0621060e21a4ebcdcdf5fd380c89, type: 3}
-      propertyPath: pickupAnimationDuration
-      value: 4.91
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

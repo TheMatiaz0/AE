@@ -182,7 +182,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   itemHolder: {fileID: 5917492521101208790}
-  pickupAnimationDuration: 0.2
+  pickupAnimationDuration: 1
   pickupEaseType: 27
 --- !u!1 &2307335022386358828
 GameObject:

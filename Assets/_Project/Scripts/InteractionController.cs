@@ -33,7 +33,6 @@ namespace AE
             {
                 if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
                 {
-                    Debug.Log($"{interactable.GetInteractionPrompt().name}");
                     currentTarget = interactable;
                 }
                 else
@@ -58,10 +57,9 @@ namespace AE
 
             item.transform.SetParent(itemHolder);
 
-            item.transform.DOLocalMove(Vector3.zero, pickupAnimationDuration)
-                .SetEase(pickupEaseType);
-            item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration)
-                .SetEase(pickupEaseType);
+            Sequence seq = DOTween.Sequence();
+            seq.Append(item.transform.DOLocalMove(Vector3.zero, pickupAnimationDuration).SetEase(pickupEaseType));
+            seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
         }
 
         private void DropItem()
@@ -84,7 +82,6 @@ namespace AE
 
         public void OnInteract()
         {
-            Debug.Log($"Is NULL: {currentTarget == null}");
             currentTarget?.Interact(this);
         }
 
