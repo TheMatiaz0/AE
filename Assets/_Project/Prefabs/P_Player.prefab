@@ -177,13 +177,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 4625611085736199078}
-  interactionRange: 3
+  interactionRange: 4
   interactableLayer:
     serializedVersion: 2
     m_Bits: 64
   itemHolder: {fileID: 5917492521101208790}
-  pickupAnimationDuration: 1
+  pickupAnimationDuration: 0.6
   pickupEaseType: 27
+  dropAnimationDuration: 0.2
+  dropEaseType: 12
+  dropForwardOffset: 2.5
+  dropVerticalOffset: -1.7
 --- !u!1 &2307335022386358828
 GameObject:
   m_ObjectHideFlags: 0

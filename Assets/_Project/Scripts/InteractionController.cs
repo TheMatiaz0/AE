@@ -12,10 +12,16 @@ namespace AE
         [SerializeField] private float interactionRange = 3f;
         [SerializeField] private LayerMask interactableLayer;
 
-        [Header("Item Holding Settings")]
+        [Header("Item Hold Settings")]
         [SerializeField] private Transform itemHolder;
         [SerializeField] private float pickupAnimationDuration = 0.2f;
         [SerializeField] private Ease pickupEaseType = Ease.OutBack;
+
+        [Header("Item Drop Settings")]
+        [SerializeField] private float dropAnimationDuration = 0.3f;
+        [SerializeField] private Ease dropEaseType = Ease.InCubic;
+        [SerializeField] private float dropForwardOffset = 0.3f;
+        [SerializeField] private float dropVerticalOffset = -1.8f;
 
         private IInteractable currentTarget;
         private PickableItem heldItem;
@@ -57,7 +63,7 @@ namespace AE
 
             item.transform.SetParent(itemHolder);
 
-            Sequence seq = DOTween.Sequence();
+            var seq = DOTween.Sequence();
             seq.Append(item.transform.DOLocalMove(Vector3.zero, pickupAnimationDuration).SetEase(pickupEaseType));
             seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
         }
@@ -68,10 +74,30 @@ namespace AE
             {
                 heldItem.transform.SetParent(null);
 
+                heldItem.transform.GetPositionAndRotation(out var startPosition, out var startRotation);
+
+                var dropPosition = transform.position + transform.forward * dropForwardOffset;
+                dropPosition.y = transform.position.y + dropVerticalOffset;
+
+                // TODO: do raycast check of ground
+
                 var droppedItem = heldItem;
                 heldItem = null;
 
-                droppedItem.Drop();
+                var lookDirection = -transform.forward;
+                lookDirection.y = 0f;
+
+                var targetRotation = Quaternion.LookRotation(lookDirection, Vector3.up);
+
+                var dropSequence = DOTween.Sequence();
+
+                dropSequence.Join(droppedItem.transform.DOMove(dropPosition, dropAnimationDuration).SetEase(dropEaseType));
+                dropSequence.Join(droppedItem.transform.DORotateQuaternion(targetRotation, dropAnimationDuration).SetEase(dropEaseType));
+
+                dropSequence.OnComplete(() =>
+                {
+                    droppedItem.Drop();
+                });
             }
         }
 

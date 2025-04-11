@@ -5,6 +5,8 @@ namespace AE
     public class PickableItem : MonoBehaviour, IInteractable
     {
         [SerializeField]
+        private Item itemData;
+        [SerializeField]
         private InteractablePrompt prompt;
         [SerializeField]
         private Vector3 heldRotation;
