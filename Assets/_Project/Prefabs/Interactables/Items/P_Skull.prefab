@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SD_Prop_Skull_01
       objectReference: {fileID: 0}
+    - target: {fileID: 103404, guid: 25dd66e9b7eee8a4ea04a6f1f4f65265, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 438228, guid: 25dd66e9b7eee8a4ea04a6f1f4f65265, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

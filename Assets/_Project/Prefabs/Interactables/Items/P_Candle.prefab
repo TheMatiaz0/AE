@@ -187,6 +187,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SD_Prop_Candle_01
       objectReference: {fileID: 0}
+    - target: {fileID: 142874, guid: 1ef4dd93dab6e69498d268d17fcdc66b, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 413552, guid: 1ef4dd93dab6e69498d268d17fcdc66b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

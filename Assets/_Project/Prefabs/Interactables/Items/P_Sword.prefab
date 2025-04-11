@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 101020, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_Name
-      value: P_SwordItem
+      value: SD_Prop_Sword_Rusty_01
       objectReference: {fileID: 0}
     - target: {fileID: 101020, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_Layer

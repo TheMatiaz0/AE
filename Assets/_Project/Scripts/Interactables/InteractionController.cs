@@ -37,7 +37,7 @@ namespace AE
 
             if (Physics.Raycast(ray, out var hit, interactionRange, interactableLayer))
             {
-                if (hit.collider.TryGetComponent<IInteractable>(out var interactable))
+                if (hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable))
                 {
                     currentTarget = interactable;
                 }
@@ -60,7 +60,6 @@ namespace AE
             }
 
             heldItem = item;
-
             item.transform.SetParent(itemHolder);
 
             var seq = DOTween.Sequence();
