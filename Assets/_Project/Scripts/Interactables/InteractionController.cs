@@ -64,7 +64,7 @@ namespace AE
             item.transform.SetParent(itemHolder);
 
             var seq = DOTween.Sequence();
-            seq.Append(item.transform.DOLocalMove(Vector3.zero, pickupAnimationDuration).SetEase(pickupEaseType));
+            seq.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
             seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
         }
 
