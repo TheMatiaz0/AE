@@ -14006,6 +14006,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1785080318}
   - component: {fileID: 1785080319}
+  - component: {fileID: 1785080320}
   m_Layer: 0
   m_Name: KnightStabPhase
   m_TagString: Untagged
@@ -14043,6 +14044,19 @@ MonoBehaviour:
   objectsToActivate:
   - {fileID: 3605964427753142276}
   objectsToDeactivate: []
+--- !u!114 &1785080320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785080317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40181d6d042399d44812646c24c7615e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: {fileID: 0}
 --- !u!1001 &1793053359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18104,63 +18118,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b94388ae0f181046982a0e5ebafa52e, type: 3}
---- !u!1001 &9158835232763658677
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2621249550133648129, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_Name
-      value: BaseItem
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4985155744533155269, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 5e6ab0fab45403c43ad9aebbddd2c1da, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -18173,4 +18130,3 @@ SceneRoots:
   - {fileID: 1950031761}
   - {fileID: 869844747}
   - {fileID: 655089727}
-  - {fileID: 9158835232763658677}

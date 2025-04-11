@@ -1,11 +1,10 @@
-using DG.Tweening;
 using UnityEngine;
 
 namespace AE
 {
     public class OnEnableActivator : MonoBehaviour
     {
-        [SerializeField] private IActivable activable; 
+        [SerializeReference, SubclassSelector] private IActivable activable; 
 
         private void Awake()
         {

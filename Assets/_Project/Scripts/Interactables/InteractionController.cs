@@ -26,6 +26,8 @@ namespace AE
         private IInteractable currentTarget;
         private PickableItem heldItem;
 
+        public PickableItem HeldItem => heldItem;
+
         private void Update()
         {
             CheckForInteractables();
@@ -79,6 +81,7 @@ namespace AE
                 dropPosition.y = transform.position.y + dropVerticalOffset;
 
                 // TODO: do raycast check of ground
+                // TODO: don't allow items to fall off grids
 
                 var droppedItem = heldItem;
                 heldItem = null;

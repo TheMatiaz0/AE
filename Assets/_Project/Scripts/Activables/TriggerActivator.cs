@@ -4,7 +4,7 @@ namespace AE
 {
     public class TriggerActivator : MonoBehaviour
     {
-        [SerializeField] private IActivable activable;
+        [SerializeReference, SubclassSelector] private IActivable activable;
 
         private void OnTriggerEnter(Collider other)
         {
