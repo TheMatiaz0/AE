@@ -15,6 +15,11 @@ namespace AE
 
         public void Interact(IInteractionContext context)
         {
+            if (conditions != null && !conditions.IsConditionMet(context))
+            {
+                return;
+            }
+
             activateEffects?.Activate(context);
             deactivateEffects?.Deactivate(context);
 

@@ -112,8 +112,8 @@ MonoBehaviour:
         element: {fileID: 7752653965991066950}
         endPosition: {x: 0.17406245, y: 0.16632986, z: -0.07878329}
         endRotation: {x: 277.13434, y: 193.49045, z: 194.41225}
-        endDuration: 4
-        endEase: 27
+        endDuration: 2
+        endEase: 17
     - rid: 9194704756931035222
       type: {class: GameObjectActivable, ns: AE, asm: AE}
       data:

@@ -116,10 +116,10 @@ MonoBehaviour:
       type: {class: MoveRotateActivable, ns: AE, asm: AE}
       data:
         element: {fileID: 3437928761634917216}
-        endPosition: {x: 2.932698, y: -4.347113, z: 12.25111}
-        endRotation: {x: 0, y: 0, z: 0}
-        endDuration: 5
-        endEase: 27
+        endPosition: {x: 2.98, y: -4.9, z: 12.86}
+        endRotation: {x: -45, y: 0, z: -90}
+        endDuration: 1.5
+        endEase: 3
     - rid: 9194704756931035224
       type: {class: PuzzleStateActivable, ns: AE, asm: AE}
       data:

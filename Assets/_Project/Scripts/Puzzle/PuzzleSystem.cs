@@ -31,6 +31,7 @@ namespace AE
             var puzzleStep = puzzleSteps[puzzle];
             if (puzzleStep != null)
             {
+                Debug.Log($"Puzzle: {puzzleStep.Reference.name} is done!");
                 puzzleStep.IsCompleted = true;
                 OnPuzzleStepCompleted?.Invoke(puzzleStep);
             }

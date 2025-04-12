@@ -16,7 +16,7 @@ namespace AE
         [SerializeField]
         private Collider activeCollider;
 
-        public ItemReference ItemData => itemData;
+        public ItemReference ItemReference => itemData;
         public Vector3 HeldPosition => heldPosition;
         public Vector3 HeldRotation => heldRotation;
 

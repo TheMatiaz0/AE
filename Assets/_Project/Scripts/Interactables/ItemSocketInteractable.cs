@@ -24,12 +24,12 @@ namespace AE
         {
             var controller = context.InteractionController;
 
-            if (controller.HeldItem == null || controller.HeldItem.ItemData != requiredItem)
+            if (controller.HeldItem == null || controller.HeldItem.ItemReference != requiredItem)
             {
                 return;
             }
 
-            insertedItems.Add(controller.HeldItem.ItemData);
+            insertedItems.Add(controller.HeldItem.ItemReference);
             controller.ConsumeHeldItem();
 
             UpdateVisuals(insertedItems.Count - 1);
