@@ -84,7 +84,7 @@ MonoBehaviour:
   prompt: {fileID: 11400000, guid: 26936fb230e12254a9a35e47e42642e7, type: 2}
   requiredItem: {fileID: 11400000, guid: e032a9fbfc640944d98254ca6185df52, type: 2}
   maxItemCount: 1
-  visualSlots:
+  activateObjects:
   - {fileID: 7752653965991119836}
   shouldActivateObjects: 1
 --- !u!1001 &7752653965991149888

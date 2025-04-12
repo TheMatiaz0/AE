@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,19 +10,21 @@ namespace AE
     {
         [SerializeReference, SubclassSelector] private List<IActivable> activables;
 
-        public void Activate()
+        protected List<IActivable> Activables => activables;
+
+        public void Activate(IContext context)
         {
             foreach (var activable in activables)
             {
-                activable.Activate();
+                activable.Activate(context);
             }
         }
 
-        public void Deactivate()
+        public void Deactivate(IContext context)
         {
             foreach (var activable in activables)
             {
-                activable.Deactivate();
+                activable.Deactivate(context);
             }
         }
     }

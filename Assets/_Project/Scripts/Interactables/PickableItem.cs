@@ -32,11 +32,8 @@ namespace AE
 
         public void Interact(IInteractionContext context)
         {
-            if (IsInteractable)
-            {
-                Pickup(context.InteractionController);
-                OnComplete?.Invoke();
-            }
+            Pickup(context.InteractionController);
+            OnComplete?.Invoke();
         }
 
         private void Pickup(InteractionController controller)

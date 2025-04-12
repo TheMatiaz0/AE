@@ -25,8 +25,14 @@ namespace AE
 
         private IInteractable currentTarget;
         private PickableItem heldItem;
+        private InteractionContext context;
 
         public PickableItem HeldItem => heldItem;
+
+        private void Awake()
+        {
+            context = new InteractionContext(this);
+        }
 
         private void Update()
         {
@@ -69,7 +75,7 @@ namespace AE
             seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
         }
 
-        public void ConsumeItem()
+        public void ConsumeHeldItem()
         {
             if (heldItem != null)
             {
@@ -118,8 +124,10 @@ namespace AE
 
         public void OnInteract()
         {
-            var context = new InteractionContext(this);
-            currentTarget?.Interact(context);
+            if (currentTarget.IsInteractable)
+            {
+                currentTarget?.Interact(context);
+            }
         }
 
         public void OnDrop()

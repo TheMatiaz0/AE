@@ -13,7 +13,7 @@ namespace AE
         [SerializeField]
         private List<GameObject> objectsToDeactivate;
 
-        public void Activate()
+        public void Activate(IContext context)
         {
             foreach (var obj in objectsToActivate)
             {
@@ -25,7 +25,7 @@ namespace AE
             }
         }
 
-        public void Deactivate()
+        public void Deactivate(IContext context)
         {
             foreach (var obj in objectsToActivate)
             {

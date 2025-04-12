@@ -14,7 +14,7 @@ namespace AE
         [SerializeField] private ItemReference requiredItem;
         [SerializeField] private int maxItemCount = 1;
         [Header("Result")]
-        [SerializeField] private List<GameObject> visualSlots;
+        [SerializeField] private List<GameObject> activateObjects;
         [SerializeField] private bool shouldActivateObjects = true;
 
         private readonly List<ItemReference> insertedItems;
@@ -27,22 +27,22 @@ namespace AE
         {
             var controller = context.InteractionController;
 
-            if (controller.HeldItem == null || !IsInteractable || controller.HeldItem.ItemData != requiredItem)
+            if (controller.HeldItem == null || controller.HeldItem.ItemData != requiredItem)
             {
                 return;
             }
 
             insertedItems.Add(controller.HeldItem.ItemData);
-            controller.ConsumeItem();
+            controller.ConsumeHeldItem();
 
             UpdateVisuals(insertedItems.Count - 1);
         }
 
         private void UpdateVisuals(int index)
         {
-            if (index < visualSlots.Count)
+            if (index < activateObjects.Count)
             {
-                visualSlots[index].SetActive(shouldActivateObjects);
+                activateObjects[index].SetActive(shouldActivateObjects);
                 OnUpdate?.Invoke();
             }
             else

@@ -70,39 +70,16 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3643318255892834486}
+      addedObject: {fileID: 3090941512817358762}
     - targetCorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3090941512817358762}
+      addedObject: {fileID: 3643318255892834486}
   m_SourcePrefab: {fileID: 100100000, guid: 905f5d361cad193469ae394765266d9a, type: 3}
---- !u!4 &3437928761634917216 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 443456, guid: 905f5d361cad193469ae394765266d9a, type: 3}
-  m_PrefabInstance: {fileID: 3437928761635360544}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3437928761635161644 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
   m_PrefabInstance: {fileID: 3437928761635360544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3643318255892834486
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3437928761635161644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  element: {fileID: 3437928761634917216}
-  prompt: {fileID: 11400000, guid: c4ec03420aed061478ec7d8f0492f222, type: 2}
-  endPosition: {x: 0, y: 0, z: 0}
-  endRotation: {x: 0, y: 0, z: 0}
-  endDuration: 0
-  endEase: 27
 --- !u!114 &3090941512817358762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,3 +93,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
+--- !u!114 &3643318255892834486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437928761635161644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: {fileID: 0}
+  result:
+    rid: 9194704756931035204
+  references:
+    version: 2
+    RefIds:
+    - rid: 9194704756931035204
+      type: {class: MultiActivatorActivable, ns: AE, asm: AE}
+      data:
+        activables: []

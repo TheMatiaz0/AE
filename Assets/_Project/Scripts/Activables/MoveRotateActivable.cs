@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using System;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 namespace AE
 {
     [Serializable]
-    public class MoveRotateActivable : IActivable
+    public class MoveRotateActivable : IAsyncActivable
     {
         [SerializeField]
         private Transform element;
@@ -20,18 +21,30 @@ namespace AE
         [SerializeField] private float endDuration;
         [SerializeField] private Ease endEase;
 
-        public void Activate()
+        public void Activate(IContext context)
         {
-            element.DOLocalMove(endPosition, endDuration)
-                .SetEase(endEase);
-            element.DOLocalRotate(endRotation, endDuration)
-                .SetEase(endEase);
+            _ = ActivateAsync(context);
         }
 
-        public void Deactivate()
+        public void Deactivate(IContext context)
         {
             element.localPosition = startPosition;
             element.localEulerAngles = startRotation;
+        }
+
+        public async UniTask ActivateAsync(IContext context)
+        {
+            Sequence sequence = DOTween.Sequence();
+
+            await sequence.Insert(0, element.DOLocalMove(endPosition, endDuration)).AsyncWaitForCompletion();
+            await sequence.Insert(0, element.DOLocalRotate(endRotation, endDuration))
+                .SetEase(endEase).AsyncWaitForCompletion();
+        }
+
+        public UniTask DeactivateAsync(IContext context)
+        {
+            Deactivate(context);
+            return UniTask.CompletedTask;
         }
     }
 }
