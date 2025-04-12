@@ -5,9 +5,6 @@ namespace AE
 {
     public class PickableItem : MonoBehaviour, IInteractable
     {
-        public event Action OnComplete;
-        public event Action OnUpdate;
-
         [SerializeField]
         private ItemReference itemData;
         [SerializeField]
@@ -33,7 +30,6 @@ namespace AE
         public void Interact(IInteractionContext context)
         {
             Pickup(context.InteractionController);
-            OnComplete?.Invoke();
         }
 
         private void Pickup(InteractionController controller)
@@ -47,7 +43,6 @@ namespace AE
         {
             IsInteractable = true;
             activeCollider.enabled = true;
-            OnUpdate?.Invoke();
         }
 
 #if UNITY_EDITOR

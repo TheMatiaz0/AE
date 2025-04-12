@@ -51,13 +51,11 @@ namespace AE
             }
 
             Sequence sequence = DOTween.Sequence();
-            sequence.Pause();
 
             sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
             sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
             sequence.SetEase(endEase);
 
-            sequence.Play();
             await sequence.AsyncWaitForCompletion();
         }
 

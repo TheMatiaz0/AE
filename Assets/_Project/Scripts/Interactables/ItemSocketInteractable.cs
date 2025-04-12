@@ -6,9 +6,6 @@ namespace AE
 {
     public class ItemSocketInteractable : MonoBehaviour, IInteractable
     {
-        public event Action OnComplete;
-        public event Action OnUpdate;
-
         [SerializeField] private InteractablePrompt prompt;
         [Header("Condition")]
         [SerializeField] private ItemReference requiredItem;
@@ -43,11 +40,6 @@ namespace AE
             if (index < activateObjects.Count)
             {
                 activateObjects[index].SetActive(shouldActivateObjects);
-                OnUpdate?.Invoke();
-            }
-            else
-            {
-                OnComplete?.Invoke();
             }
         }
     }
