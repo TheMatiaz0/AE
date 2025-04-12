@@ -12,7 +12,10 @@ namespace AE
         {
             if (context is IInteractionContext interaction)
             {
-                return interaction.InteractionController.HeldItem.ItemReference == requiredItem;
+                if (interaction.InteractionController.HeldItem != null)
+                {
+                    return interaction.InteractionController.HeldItem.ItemReference == requiredItem;
+                }
             }
 
             return false;

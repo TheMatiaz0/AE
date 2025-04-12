@@ -52,9 +52,9 @@ namespace AE
 
             Sequence sequence = DOTween.Sequence();
 
-            sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
-            sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
-            sequence.SetEase(endEase);
+            await sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
+            await sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
+            await sequence.SetEase(endEase);
 
             await sequence.AsyncWaitForCompletion();
         }

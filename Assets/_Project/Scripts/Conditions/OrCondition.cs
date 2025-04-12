@@ -11,7 +11,7 @@ namespace AE
 
         public bool IsConditionMet(IContext context)
         {
-            return conditions.Exists(c => c.IsConditionMet(context));
+            return conditions.Exists(c => c != null && c.IsConditionMet(context));
         }
     }
 }
