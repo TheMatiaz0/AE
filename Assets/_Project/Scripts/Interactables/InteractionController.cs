@@ -124,9 +124,9 @@ namespace AE
 
         public void OnInteract()
         {
-            if (currentTarget.IsInteractable)
+            if (currentTarget != null && currentTarget.IsInteractable)
             {
-                currentTarget?.Interact(context);
+                currentTarget.Interact(context);
             }
         }
 

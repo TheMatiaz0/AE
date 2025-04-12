@@ -11,10 +11,7 @@ namespace AE
 
         public void Activate(IContext context)
         {
-            if (context is IPuzzleContext puzzleContext)
-            {
-                puzzleContext.PuzzleSystem.MarkPuzzleAsComplete(puzzleReference);
-            }
+            PuzzleSystem.Instance.MarkPuzzleAsComplete(puzzleReference);
         }
 
         public void Deactivate(IContext context)

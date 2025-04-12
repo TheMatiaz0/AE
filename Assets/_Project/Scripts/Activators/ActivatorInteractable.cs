@@ -9,15 +9,18 @@ namespace AE
         public event Action OnUpdate;
 
         [SerializeField] private InteractablePrompt prompt;
-        [SerializeReference, SubclassSelector] private IActivable result;
+        [SerializeReference, SubclassSelector] private ICondition conditions;
+        [SerializeReference, SubclassSelector] private IActivable activateEffects;
+        [SerializeReference, SubclassSelector] private IActivable deactivateEffects;
 
-        public bool IsInteractable { get; private set; }
+        public bool IsInteractable { get; private set; } = true;
 
         public InteractablePrompt GetInteractionPrompt() => prompt;
 
         public void Interact(IInteractionContext context)
         {
-            result?.Activate(context);
+            activateEffects?.Activate(context);
+            deactivateEffects?.Deactivate(context);
 
             IsInteractable = false;
             OnComplete?.Invoke();

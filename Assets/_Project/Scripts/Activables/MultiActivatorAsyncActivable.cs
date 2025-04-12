@@ -1,12 +1,28 @@
 using Cysharp.Threading.Tasks;
+using System;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace AE
 {
-    public class MultiActivatorAsyncActivable : MultiActivatorActivable, IAsyncActivable
+    [Serializable]
+    public class MultiActivatorAsyncActivable : IAsyncActivable
     {
+        [SerializeReference, SubclassSelector] private List<IActivable> activables;
+
+        public void Activate(IContext context)
+        {
+            ActivateAsync(context).Forget();
+        }
+
+        public void Deactivate(IContext context)
+        {
+            DeactivateAsync(context).Forget();
+        }
+
         public async UniTask ActivateAsync(IContext context)
         {
-            foreach (var activable in Activables)
+            foreach (var activable in activables)
             {
                 if (activable is IAsyncActivable asyncActivable)
                 {
@@ -21,7 +37,7 @@ namespace AE
 
         public async UniTask DeactivateAsync(IContext context)
         {
-            foreach (var activable in Activables)
+            foreach (var activable in activables)
             {
                 if (activable is IAsyncActivable asyncActivable)
                 {

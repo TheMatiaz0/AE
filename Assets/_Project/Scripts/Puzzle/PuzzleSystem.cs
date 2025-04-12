@@ -12,13 +12,17 @@ namespace AE
 
         private static Dictionary<PuzzleReference, PuzzleStep> puzzleSteps;
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        static void OnBeforeSceneLoad()
+        static PuzzleSystem()
+        {
+            Instance ??= new PuzzleSystem();
+        }
+
+        private PuzzleSystem()
         {
             puzzleSteps = new();
             foreach (var puzzleRef in Resources.LoadAll<PuzzleReference>("PuzzleSteps"))
             {
-                puzzleSteps.Add(puzzleRef, new(puzzleRef));
+                puzzleSteps.Add(puzzleRef, new PuzzleStep(puzzleRef));
             }
         }
 

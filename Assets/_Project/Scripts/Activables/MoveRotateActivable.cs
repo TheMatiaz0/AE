@@ -11,15 +11,14 @@ namespace AE
         [SerializeField]
         private Transform element;
 
-        [Header("Start Settings")]
-        [SerializeField] private Vector3 startPosition;
-        [SerializeField] private Vector3 startRotation;
-
         [Header("Destination Settings")]
         [SerializeField] private Vector3 endPosition;
         [SerializeField] private Vector3 endRotation;
         [SerializeField] private float endDuration;
         [SerializeField] private Ease endEase;
+
+        private Vector3? startPosition;
+        private Vector3? startRotation;
 
         public void Activate(IContext context)
         {
@@ -28,17 +27,38 @@ namespace AE
 
         public void Deactivate(IContext context)
         {
-            element.localPosition = startPosition;
-            element.localEulerAngles = startRotation;
+            if (startPosition != null)
+            {
+                element.localPosition = startPosition.Value;
+            }
+            if (startRotation != null)
+            {
+                element.localEulerAngles = startRotation.Value;
+            }
+
+            DOTween.KillAll();
         }
 
         public async UniTask ActivateAsync(IContext context)
         {
-            Sequence sequence = DOTween.Sequence();
+            if (startPosition == null)
+            {
+                startPosition = element.localPosition;
+            }
+            if (startRotation == null)
+            {
+                startRotation = element.localRotation.eulerAngles;
+            }
 
-            await sequence.Insert(0, element.DOLocalMove(endPosition, endDuration)).AsyncWaitForCompletion();
-            await sequence.Insert(0, element.DOLocalRotate(endRotation, endDuration))
-                .SetEase(endEase).AsyncWaitForCompletion();
+            Sequence sequence = DOTween.Sequence();
+            sequence.Pause();
+
+            sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
+            sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
+            sequence.SetEase(endEase);
+
+            sequence.Play();
+            await sequence.AsyncWaitForCompletion();
         }
 
         public UniTask DeactivateAsync(IContext context)

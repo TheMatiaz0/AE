@@ -14657,7 +14657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4624227725711097874}
   m_Layer: 0
-  m_Name: P_TorchFire
+  m_Name: P_VFX_Flame
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -57,7 +57,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 121920, guid: 1b7cbdba7f53ce94abf3c3d786ddd6f2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8614685674330765416}
+      addedObject: {fileID: 6079299199766726089}
   m_SourcePrefab: {fileID: 100100000, guid: 1b7cbdba7f53ce94abf3c3d786ddd6f2, type: 3}
 --- !u!4 &737439182538571296 stripped
 Transform:
@@ -69,7 +69,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 121920, guid: 1b7cbdba7f53ce94abf3c3d786ddd6f2, type: 3}
   m_PrefabInstance: {fileID: 737439182538688568}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8614685674330765416
+--- !u!114 &6079299199766726089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78,15 +78,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 737439182538773624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe9321f90868e44e99e222ada692466, type: 3}
+  m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: {fileID: 11400000, guid: 26936fb230e12254a9a35e47e42642e7, type: 2}
-  requiredItem: {fileID: 11400000, guid: e032a9fbfc640944d98254ca6185df52, type: 2}
-  maxItemCount: 1
-  activateObjects:
-  - {fileID: 7752653965991119836}
-  shouldActivateObjects: 1
+  conditions:
+    rid: 9194704756931035218
+  activateEffects:
+    rid: 9194704756931035220
+  deactivateEffects:
+    rid: 9194704756931035219
+  references:
+    version: 2
+    RefIds:
+    - rid: 9194704756931035218
+      type: {class: SpecificItemCondition, ns: AE, asm: AE}
+      data:
+        requiredItem: {fileID: 11400000, guid: e032a9fbfc640944d98254ca6185df52, type: 2}
+    - rid: 9194704756931035219
+      type: {class: InteractionActivable, ns: AE, asm: AE}
+      data:
+        item: {fileID: 0}
+    - rid: 9194704756931035220
+      type: {class: MultiActivatorAsyncActivable, ns: AE, asm: AE}
+      data:
+        activables:
+        - rid: 9194704756931035222
+        - rid: 9194704756931035221
+        - rid: 9194704756931035223
+    - rid: 9194704756931035221
+      type: {class: MoveRotateActivable, ns: AE, asm: AE}
+      data:
+        element: {fileID: 7752653965991066950}
+        endPosition: {x: 0.17406245, y: 0.16632986, z: -0.07878329}
+        endRotation: {x: 277.13434, y: 193.49045, z: 194.41225}
+        endDuration: 4
+        endEase: 27
+    - rid: 9194704756931035222
+      type: {class: GameObjectActivable, ns: AE, asm: AE}
+      data:
+        objectsToActivate:
+        - {fileID: 7752653965991119836}
+        objectsToDeactivate: []
+    - rid: 9194704756931035223
+      type: {class: PuzzleStateActivable, ns: AE, asm: AE}
+      data:
+        puzzleReference: {fileID: 11400000, guid: 7e4ce5fe824b45645a09ec63b5f68a39, type: 2}
 --- !u!1001 &7752653965991149888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,15 +142,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 441350, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.17406245
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 441350, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.16632986
+      value: 2.24
       objectReference: {fileID: 0}
     - target: {fileID: 441350, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.07878329
+      value: -0.33
       objectReference: {fileID: 0}
     - target: {fileID: 441350, guid: a9801b496c0b22542bd354dbd33e894d, type: 3}
       propertyPath: m_LocalRotation.w
