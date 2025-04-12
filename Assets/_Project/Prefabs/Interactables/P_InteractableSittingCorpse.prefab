@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 113766, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
       propertyPath: m_Name
-      value: SD_Prop_Corpse_04 Variant
+      value: P_InteractableSittingCorpse
+      objectReference: {fileID: 0}
+    - target: {fileID: 113766, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 485710, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
       propertyPath: m_RootOrder
@@ -47,5 +51,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 113766, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2145646047696267425}
   m_SourcePrefab: {fileID: 100100000, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
+--- !u!1 &4603340943560530592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 113766, guid: 73117263d32dd2d4bb886dbab30f6b15, type: 3}
+  m_PrefabInstance: {fileID: 4603340943560435398}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2145646047696267425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603340943560530592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40181d6d042399d44812646c24c7615e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: {fileID: 0}
+  conditions: []
+  result:
+    rid: -2
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }

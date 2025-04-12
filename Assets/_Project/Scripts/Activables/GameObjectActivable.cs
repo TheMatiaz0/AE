@@ -1,20 +1,17 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace AE
 {
-    public class GameObjectActivable : MonoBehaviour, IActivable
+    [Serializable]
+    public class GameObjectActivable : IActivable
     {
         [SerializeField]
         private List<GameObject> objectsToActivate;
 
         [SerializeField]
         private List<GameObject> objectsToDeactivate;
-
-        private void Awake()
-        {
-            Deactivate();
-        }
 
         public void Activate()
         {

@@ -4,15 +4,13 @@ using UnityEngine;
 
 namespace AE
 {
-    [Serializable]
-    public class MoveRotateActivable : IActivable
+    public class MoveRotateInteractable : MonoBehaviour, IInteractable
     {
-        [SerializeField]
-        private Transform element;
+        public event Action OnComplete;
+        public event Action OnUpdate;
 
-        [Header("Start Settings")]
-        [SerializeField] private Vector3 startPosition;
-        [SerializeField] private Vector3 startRotation;
+        [SerializeField] private Transform element;
+        [SerializeField] private InteractablePrompt prompt;
 
         [Header("Destination Settings")]
         [SerializeField] private Vector3 endPosition;
@@ -20,18 +18,19 @@ namespace AE
         [SerializeField] private float endDuration;
         [SerializeField] private Ease endEase;
 
-        public void Activate()
+        public bool IsInteractable { get; private set; }
+
+        public InteractablePrompt GetInteractionPrompt() => prompt;
+
+        public void Interact(IInteractionContext context)
         {
             element.DOLocalMove(endPosition, endDuration)
                 .SetEase(endEase);
             element.DOLocalRotate(endRotation, endDuration)
                 .SetEase(endEase);
-        }
 
-        public void Deactivate()
-        {
-            element.localPosition = startPosition;
-            element.localEulerAngles = startRotation;
+            IsInteractable = false;
+            OnComplete?.Invoke();
         }
     }
 }

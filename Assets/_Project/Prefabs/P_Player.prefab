@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3152218035837895593}
   - component: {fileID: 7889315143962942606}
   - component: {fileID: 8936182422943000403}
+  - component: {fileID: 43881207142844131}
   m_Layer: 0
   m_Name: P_Player
   m_TagString: Untagged
@@ -188,6 +189,19 @@ MonoBehaviour:
   dropEaseType: 12
   dropForwardOffset: 2.5
   dropVerticalOffset: -1.7
+--- !u!114 &43881207142844131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2171391373805092234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584c2a63adec5d64882797bf5868df45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionController: {fileID: 8936182422943000403}
 --- !u!1 &2307335022386358828
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
       propertyPath: m_Name
-      value: P_BrokenCandleStand
+      value: P_InteractableCandleStand
+      objectReference: {fileID: 0}
+    - target: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 443456, guid: 905f5d361cad193469ae394765266d9a, type: 3}
       propertyPath: m_RootOrder
@@ -66,7 +70,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7975147150980360329}
+      addedObject: {fileID: 3643318255892834486}
+    - targetCorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3090941512817358762}
   m_SourcePrefab: {fileID: 100100000, guid: 905f5d361cad193469ae394765266d9a, type: 3}
 --- !u!4 &3437928761634917216 stripped
 Transform:
@@ -78,7 +85,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 198924, guid: 905f5d361cad193469ae394765266d9a, type: 3}
   m_PrefabInstance: {fileID: 3437928761635360544}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7975147150980360329
+--- !u!114 &3643318255892834486
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,13 +94,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3437928761635161644}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 786767708c544b24cb0622f2bddfa2e9, type: 3}
+  m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   element: {fileID: 3437928761634917216}
-  startPosition: {x: 2.932698, y: -4.347113, z: 12.25111}
-  startRotation: {x: -18.269, y: -20.875, z: 6.817}
-  endPosition: {x: 1.623, y: -5.136, z: 12.407}
-  endRotation: {x: -44.836, y: -21.579, z: -84.183}
-  endDuration: 4
+  prompt: {fileID: 11400000, guid: c4ec03420aed061478ec7d8f0492f222, type: 2}
+  endPosition: {x: 0, y: 0, z: 0}
+  endRotation: {x: 0, y: 0, z: 0}
+  endDuration: 0
   endEase: 27
+--- !u!114 &3090941512817358762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437928761635161644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 814bcce5158ba504aa888f1a8fbe9b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}

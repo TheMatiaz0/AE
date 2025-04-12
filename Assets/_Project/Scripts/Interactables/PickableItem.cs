@@ -1,11 +1,15 @@
+using System;
 using UnityEngine;
 
 namespace AE
 {
     public class PickableItem : MonoBehaviour, IInteractable
     {
+        public event Action OnComplete;
+        public event Action OnUpdate;
+
         [SerializeField]
-        private Item itemData;
+        private ItemReference itemData;
         [SerializeField]
         private InteractablePrompt prompt;
         [SerializeField]
@@ -15,35 +19,38 @@ namespace AE
         [SerializeField]
         private Collider activeCollider;
 
+        public ItemReference ItemData => itemData;
         public Vector3 HeldPosition => heldPosition;
         public Vector3 HeldRotation => heldRotation;
 
-        public bool CanBePickedUp { get; private set; } = true;
+        public bool IsInteractable { get; private set; } = true;
 
         public InteractablePrompt GetInteractionPrompt()
         {
             return prompt;
         }
 
-        public void Interact(InteractionController controller)
+        public void Interact(IInteractionContext context)
         {
-            if (CanBePickedUp)
+            if (IsInteractable)
             {
-                Pickup(controller);
+                Pickup(context.InteractionController);
+                OnComplete?.Invoke();
             }
         }
 
         private void Pickup(InteractionController controller)
         {
-            CanBePickedUp = false;
+            IsInteractable = false;
             activeCollider.enabled = false;
             controller.AssignItemToHand(this);
         }
 
         public void Drop()
         {
-            CanBePickedUp = true;
+            IsInteractable = true;
             activeCollider.enabled = true;
+            OnUpdate?.Invoke();
         }
 
 #if UNITY_EDITOR

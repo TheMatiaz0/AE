@@ -39,7 +39,7 @@ namespace AE
 
             if (Physics.Raycast(ray, out var hit, interactionRange, interactableLayer))
             {
-                if (hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable))
+                if (hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable) || hit.collider.TryGetComponent<IInteractable>(out interactable))
                 {
                     currentTarget = interactable;
                 }
@@ -67,6 +67,14 @@ namespace AE
             var seq = DOTween.Sequence();
             seq.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
             seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
+        }
+
+        public void ConsumeItem()
+        {
+            if (heldItem != null)
+            {
+                Destroy(heldItem.gameObject);
+            }
         }
 
         private void DropItem()
@@ -110,7 +118,8 @@ namespace AE
 
         public void OnInteract()
         {
-            currentTarget?.Interact(this);
+            var context = new InteractionContext(this);
+            currentTarget?.Interact(context);
         }
 
         public void OnDrop()
