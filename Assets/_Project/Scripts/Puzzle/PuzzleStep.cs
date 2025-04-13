@@ -8,6 +8,7 @@ namespace AE
         public PuzzleStep(PuzzleReference reference)
         {
             Reference = reference;
+            IsCompleted = false;
         }
     }
 }

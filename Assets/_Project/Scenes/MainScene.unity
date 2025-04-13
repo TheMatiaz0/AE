@@ -14318,18 +14318,13 @@ MonoBehaviour:
       type: {class: AllCondition, ns: AE, asm: AE}
       data:
         conditions:
-        - rid: 9194704766203592769
-    - rid: 9194704766203592769
-      type: {class: AllCondition, ns: AE, asm: AE}
-      data:
-        conditions:
-        - rid: 9194704766203592772
-        - rid: 9194704766203592771
-    - rid: 9194704766203592771
+        - rid: 9194704766203592773
+        - rid: 9194704766203592774
+    - rid: 9194704766203592773
       type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
       data:
         requiredPuzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
-    - rid: 9194704766203592772
+    - rid: 9194704766203592774
       type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
       data:
         requiredPuzzle: {fileID: 11400000, guid: 7e4ce5fe824b45645a09ec63b5f68a39, type: 2}
