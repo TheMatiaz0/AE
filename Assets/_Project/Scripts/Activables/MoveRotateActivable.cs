@@ -35,8 +35,6 @@ namespace AE
             {
                 element.localEulerAngles = startRotation.Value;
             }
-
-            DOTween.KillAll();
         }
 
         public async UniTask ActivateAsync(IContext context)
@@ -52,11 +50,12 @@ namespace AE
 
             var sequence = DOTween.Sequence();
 
-            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
-            _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
+            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration)).SetLink(element.gameObject);
+            _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration)).SetLink(element.gameObject);
             _ = sequence.SetEase(endEase);
 
             await sequence.AsyncWaitForCompletion();
+
         }
 
         public UniTask DeactivateAsync(IContext context)

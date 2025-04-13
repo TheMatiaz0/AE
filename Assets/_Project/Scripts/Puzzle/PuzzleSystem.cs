@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AE
 {
-    public class PuzzleSystem
+    public class PuzzleSystem : MonoBehaviour
     {
         public event Action<PuzzleStep> OnPuzzleStepCompleted;
 
@@ -12,12 +12,13 @@ namespace AE
 
         private static Dictionary<PuzzleReference, PuzzleStep> puzzleSteps;
 
-        static PuzzleSystem()
+        private void Awake()
         {
-            Instance ??= new PuzzleSystem();
+            Instance = this;
+            TryRebuildPuzzleSteps();
         }
 
-        private PuzzleSystem()
+        private static void TryRebuildPuzzleSteps()
         {
             puzzleSteps = new();
             foreach (var puzzleRef in Resources.LoadAll<PuzzleReference>("PuzzleSteps"))

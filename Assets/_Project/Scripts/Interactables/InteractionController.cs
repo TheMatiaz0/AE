@@ -50,7 +50,9 @@ namespace AE
 
             if (Physics.Raycast(ray, out var hit, interactionRange, interactableLayer))
             {
-                if (hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable) || hit.collider.TryGetComponent<IInteractable>(out interactable))
+                if ((hit.transform.parent != null 
+                    && hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable)) 
+                    || hit.collider.TryGetComponent(out interactable))
                 {
                     currentTarget = interactable;
                     OnTargetChanged?.Invoke(interactable);
@@ -92,7 +94,8 @@ namespace AE
             var sequence = DOTween.Sequence();
 
             sequence.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
-            sequence.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
+            sequence.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType))
+                .SetLink(this.gameObject);
 
             return sequence;
         }
@@ -150,7 +153,8 @@ namespace AE
             var dropSequence = DOTween.Sequence();
 
             dropSequence.Join(item.transform.DOJump(dropPosition, 1, 2, dropAnimationDuration).SetEase(dropEaseType));
-            dropSequence.Join(item.transform.DORotate(targetRotation, dropAnimationDuration).SetEase(dropEaseType));
+            dropSequence.Join(item.transform.DORotate(targetRotation, dropAnimationDuration).SetEase(dropEaseType))
+                .SetLink(this.gameObject);
 
             dropSequence.OnComplete(() =>
             {
@@ -158,11 +162,6 @@ namespace AE
             });
 
             return dropSequence;
-        }
-
-        private void OnDestroy()
-        {
-            DOTween.KillAll();
         }
 
         public void OnInteract()

@@ -43,7 +43,9 @@ namespace AE
                 }
 
                 EnableObject();
-                startTween = indicator.DOAnchorPos(endPosition, endDuration).SetEase(startEase);
+                startTween = indicator.DOAnchorPos(endPosition, endDuration)
+                    .SetEase(startEase)
+                    .SetLink(this.gameObject);
             }
             else
             {
@@ -56,7 +58,10 @@ namespace AE
                     startTween.Kill();
                 }
 
-                endTween = indicator.DOAnchorPos(startPosition, startDuration).SetEase(endEase).OnComplete(DisableObject);
+                endTween = indicator.DOAnchorPos(startPosition, startDuration)
+                    .SetEase(endEase)
+                    .OnComplete(DisableObject)
+                    .SetLink(this.gameObject);
             }
         }
 

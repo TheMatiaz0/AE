@@ -692,6 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 53426961}
+  - component: {fileID: 53426962}
   m_Layer: 0
   m_Name: Puzzles
   m_TagString: Untagged
@@ -718,6 +719,18 @@ Transform:
   - {fileID: 698802601}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &53426962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53426960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c4d70054c575424d839cdb03ea2f875, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &57234430
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16183,20 +16196,20 @@ MonoBehaviour:
   conditions:
     rid: 9194704756931035245
   result:
-    rid: 9194704756931035226
+    rid: 9194704773212536897
   references:
     version: 2
     RefIds:
-    - rid: 9194704756931035226
+    - rid: 9194704756931035245
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
+    - rid: 9194704773212536897
       type: {class: GameObjectActivable, ns: AE, asm: AE}
       data:
         objectsToActivate:
         - {fileID: 1538728162}
         objectsToDeactivate: []
-    - rid: 9194704756931035245
-      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
-      data:
-        requiredPuzzle: {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
 --- !u!1001 &1973788195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18596,6 +18609,10 @@ PrefabInstance:
     - target: {fileID: 1708881385219259329, guid: aa26d01e1725ba04491bc121219cdae1, type: 3}
       propertyPath: m_Name
       value: SD_Prop_Chest_Skull_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1708881385219259329, guid: aa26d01e1725ba04491bc121219cdae1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
