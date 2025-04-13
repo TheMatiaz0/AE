@@ -33,6 +33,7 @@ namespace AE
         private Sequence pickupSequence;
 
         public PickableItem HeldItem => heldItem;
+        public IInteractable CurrentTarget => currentTarget;
 
         private void Awake()
         {
@@ -93,9 +94,16 @@ namespace AE
         {
             var sequence = DOTween.Sequence();
 
-            sequence.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
-            sequence.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType))
-                .SetLink(this.gameObject);
+            if (item == null || item.transform == null)
+            {
+                Debug.LogWarning("Attempted to create pickup sequence for null item");
+                return sequence;
+            }
+
+            sequence.SetLink(item.gameObject, LinkBehaviour.KillOnDestroy).SetTarget(item.gameObject).SetEase(pickupEaseType);
+
+            sequence.Insert(0, item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration));
+            sequence.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration));
 
             return sequence;
         }
@@ -141,7 +149,6 @@ namespace AE
 
             return dropPosition;
         }
-
 
         private Sequence CreateDropSequence(PickableItem item, Vector3 dropPosition)
         {

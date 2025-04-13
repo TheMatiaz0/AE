@@ -5,11 +5,12 @@ namespace AE
     public class ActivatorInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] private InteractablePrompt prompt;
+        [SerializeField] private bool disableInteractableOnEnd = true;
         [SerializeReference, SubclassSelector] private ICondition conditions;
         [SerializeReference, SubclassSelector] private IActivable activateEffects;
         [SerializeReference, SubclassSelector] private IActivable deactivateEffects;
 
-        public bool IsInteractable { get; private set; } = true;
+        public bool IsInteractable { get; set; } = true;
         public InteractablePrompt InteractionPrompt => prompt;
 
         public void Interact(IInteractionContext context)
@@ -22,7 +23,10 @@ namespace AE
             activateEffects?.Activate(context);
             deactivateEffects?.Deactivate(context);
 
-            IsInteractable = false;
+            if (disableInteractableOnEnd)
+            {
+                IsInteractable = false;
+            }
         }
     }
 }

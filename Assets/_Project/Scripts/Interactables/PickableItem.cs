@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 namespace AE
@@ -22,7 +20,7 @@ namespace AE
         public Vector3 HeldRotation => heldRotation;
         public InteractablePrompt InteractionPrompt => prompt;
 
-        public bool IsInteractable { get; private set; } = true;
+        public bool IsInteractable { get; set; } = true;
 
         public void Interact(IInteractionContext context)
         {

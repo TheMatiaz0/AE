@@ -40,9 +40,9 @@ namespace AE
                     endTween.Kill();
                 }
 
-                EnableObject();
                 startTween = indicator.DOAnchorPos(endPosition, endDuration)
                     .SetEase(startEase)
+                    .OnStart(EnableObject)
                     .SetLink(this.gameObject);
             }
             else

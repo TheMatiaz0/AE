@@ -42,6 +42,17 @@ namespace AE
 
         public async UniTask ActivateAsync(IContext context)
         {
+            if (sequence.IsActive())
+            {
+                sequence.Kill();
+            }
+
+            if (element == null || element.Equals(null))
+            {
+                Debug.LogWarning("MoveRotateActivable skipped due to missing element.");
+                return;
+            }
+
             if (startPosition == null)
             {
                 startPosition = element.localPosition;
@@ -51,17 +62,14 @@ namespace AE
                 startRotation = element.localRotation.eulerAngles;
             }
 
-            if (sequence.IsActive())
-            {
-                sequence.Kill();
-            }
+            var elementGameObject = element.gameObject;
 
             sequence = DOTween.Sequence();
 
-            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration)).SetLink(element.gameObject);
-            _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration)).SetLink(element.gameObject);
-            _ = sequence.SetEase(endEase);
+            _ = sequence.SetEase(endEase).SetLink(elementGameObject, LinkBehaviour.KillOnDestroy).SetTarget(elementGameObject);
 
+            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration)).SetTarget(elementGameObject);
+            _ = sequence.Join(element.DOLocalRotate(endRotation, endDuration)).SetTarget(elementGameObject);
 
             await sequence.AsyncWaitForCompletion();
         }

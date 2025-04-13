@@ -6,6 +6,7 @@ namespace AE
     [Serializable]
     public class PuzzleStateActivable : IActivable
     {
+        [Header("Activate - Mark Puzzle As Complete")]
         [SerializeField]
         private PuzzleReference puzzleReference;
 

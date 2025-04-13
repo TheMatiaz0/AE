@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 455628, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
       propertyPath: m_RootOrder
@@ -72,6 +72,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 243489482984666516}
   m_SourcePrefab: {fileID: 100100000, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
+--- !u!4 &1708881385219154841 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 459344, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
+  m_PrefabInstance: {fileID: 1708881385219219913}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1708881385219259329 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
@@ -90,17 +95,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: {fileID: 11400000, guid: c4ec03420aed061478ec7d8f0492f222, type: 2}
+  disableInteractableOnEnd: 0
   conditions:
     rid: 9194704756931035252
   activateEffects:
-    rid: -2
+    rid: 9194704773212536911
   deactivateEffects:
     rid: 9194704756931035254
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 9194704756931035252
       type: {class: SpecificItemCondition, ns: AE, asm: AE}
       data:
@@ -109,3 +113,32 @@ MonoBehaviour:
       type: {class: InteractionActivable, ns: AE, asm: AE}
       data:
         item: {fileID: 0}
+        requiredAmount: 8
+        onCollectedRequiredAmount:
+          rid: 9194704773212536913
+    - rid: 9194704773212536911
+      type: {class: MultiActivatorAsyncActivable, ns: AE, asm: AE}
+      data:
+        activables:
+        - rid: 9194704773212536914
+        - rid: 9194704773212536915
+    - rid: 9194704773212536913
+      type: {class: PuzzleStateActivable, ns: AE, asm: AE}
+      data:
+        puzzleReference: {fileID: 11400000, guid: 75c7ece6deaf23742a13c72c8cf013e2, type: 2}
+    - rid: 9194704773212536914
+      type: {class: MoveRotateActivable, ns: AE, asm: AE}
+      data:
+        element: {fileID: 1708881385219154841}
+        endPosition: {x: 0.00869751, y: 1.2965631, z: -0.6890602}
+        endRotation: {x: -45, y: 0, z: 0}
+        endDuration: 1
+        endEase: 2
+    - rid: 9194704773212536915
+      type: {class: MoveRotateActivable, ns: AE, asm: AE}
+      data:
+        element: {fileID: 1708881385219154841}
+        endPosition: {x: 0.00869751, y: 1.2965631, z: -0.6890602}
+        endRotation: {x: 0, y: 0, z: 0}
+        endDuration: 1.5
+        endEase: 3
