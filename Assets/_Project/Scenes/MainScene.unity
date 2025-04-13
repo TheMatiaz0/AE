@@ -4720,16 +4720,18 @@ MonoBehaviour:
   conditions:
     rid: 9194704773212536922
   result:
-    rid: -2
+    rid: 9194704781385400385
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
     - rid: 9194704773212536922
       type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
       data:
         requiredPuzzle: {fileID: 11400000, guid: cef300d40fb0a2a47b200a0cd1f14c77, type: 2}
+    - rid: 9194704781385400385
+      type: {class: LoadSceneActivable, ns: AE, asm: AE}
+      data:
+        nextSceneName: MainScene
 --- !u!135 &466690986
 SphereCollider:
   m_ObjectHideFlags: 0

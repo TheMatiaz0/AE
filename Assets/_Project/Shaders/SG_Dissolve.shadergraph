@@ -280,9 +280,6 @@
             "m_Id": "bdc95b1fe96d4a508cede4ce36d71e16"
         },
         {
-            "m_Id": "d3d6856997a6492ca4425ad8c98fa0d1"
-        },
-        {
             "m_Id": "3ceae6b15d77499f8162c19fe355b5c2"
         },
         {
@@ -1584,9 +1581,6 @@
             },
             {
                 "m_Id": "e1524036cc85492fbb69dcc95ff57e77"
-            },
-            {
-                "m_Id": "d3d6856997a6492ca4425ad8c98fa0d1"
             }
         ]
     },
@@ -2407,7 +2401,7 @@
     "m_Title": "dissolve tex",
     "m_Position": {
         "x": -5076.00048828125,
-        "y": 447.0
+        "y": 447.0000305175781
     }
 }
 
@@ -3555,21 +3549,6 @@
 
 {
     "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
-    "m_ObjectId": "3a6af62f610b4a80ab07aaa3a28cef16",
-    "m_Id": 0,
-    "m_DisplayName": "Alpha Clip Threshold",
-    "m_SlotType": 0,
-    "m_Hidden": false,
-    "m_ShaderOutputName": "AlphaClipThreshold",
-    "m_StageCapability": 2,
-    "m_Value": 0.5,
-    "m_DefaultValue": 0.5,
-    "m_Labels": []
-}
-
-{
-    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.BooleanMaterialSlot",
     "m_ObjectId": "3ac81bea59e5461c9ba6c77841cb8a97",
     "m_Id": 0,
@@ -4653,7 +4632,7 @@
     "m_ActiveSubTarget": {
         "m_Id": "f0a61a4e0cbf4a7689219374e95b4b69"
     },
-    "m_AllowMaterialOverride": true,
+    "m_AllowMaterialOverride": false,
     "m_SurfaceType": 1,
     "m_ZTestMode": 4,
     "m_ZWriteControl": 0,
@@ -5637,8 +5616,8 @@
     "m_ObjectId": "7181be332d2a45b9ac9f165b2a97cdd9",
     "m_Title": "Vertex A Opacity",
     "m_Position": {
-        "x": -2665.000244140625,
-        "y": -558.0000610351563
+        "x": -2665.00048828125,
+        "y": -558.0
     }
 }
 
@@ -5755,8 +5734,8 @@
     "m_ObjectId": "73c6b684215f424b960a83eb850acbff",
     "m_Title": "use alpha channel",
     "m_Position": {
-        "x": -2969.000244140625,
-        "y": -213.00001525878907
+        "x": -2969.0,
+        "y": -213.0
     }
 }
 
@@ -7110,7 +7089,7 @@
     "m_Title": "Main Tex",
     "m_Position": {
         "x": -3343.000244140625,
-        "y": -283.0000305175781
+        "y": -283.0
     }
 }
 
@@ -8236,8 +8215,8 @@
     "m_ObjectId": "c2606a868f7144019df97e38168a2867",
     "m_Title": "step/subtract",
     "m_Position": {
-        "x": -1480.0003662109375,
-        "y": -80.99998474121094
+        "x": -1480.00048828125,
+        "y": -81.0
     }
 }
 
@@ -8673,8 +8652,8 @@
     "m_ObjectId": "d1bdc30c2aa1472cb7f3e735dc74f1f2",
     "m_Title": "mask texture",
     "m_Position": {
-        "x": -449.0000915527344,
-        "y": -316.0000305175781
+        "x": -449.00048828125,
+        "y": -316.00006103515627
     }
 }
 
@@ -8721,40 +8700,6 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     }
-}
-
-{
-    "m_SGVersion": 0,
-    "m_Type": "UnityEditor.ShaderGraph.BlockNode",
-    "m_ObjectId": "d3d6856997a6492ca4425ad8c98fa0d1",
-    "m_Group": {
-        "m_Id": ""
-    },
-    "m_Name": "SurfaceDescription.AlphaClipThreshold",
-    "m_DrawState": {
-        "m_Expanded": true,
-        "m_Position": {
-            "serializedVersion": "2",
-            "x": 0.0,
-            "y": 0.0,
-            "width": 0.0,
-            "height": 0.0
-        }
-    },
-    "m_Slots": [
-        {
-            "m_Id": "3a6af62f610b4a80ab07aaa3a28cef16"
-        }
-    ],
-    "synonyms": [],
-    "m_Precision": 0,
-    "m_PreviewExpanded": true,
-    "m_DismissedVersion": 0,
-    "m_PreviewMode": 0,
-    "m_CustomColors": {
-        "m_SerializableColors": []
-    },
-    "m_SerializedDescriptor": "SurfaceDescription.AlphaClipThreshold"
 }
 
 {
@@ -9654,8 +9599,8 @@
     "m_ObjectId": "f15131b15a554ecba014bffa792fc215",
     "m_Title": "has texture dissolve",
     "m_Position": {
-        "x": -1174.0003662109375,
-        "y": -390.0000305175781
+        "x": -1174.00048828125,
+        "y": -390.0000915527344
     }
 }
 
@@ -9704,8 +9649,8 @@
     "m_ObjectId": "f3e4b2c3daa04b36b4cad1244e798b44",
     "m_Title": "has mask",
     "m_Position": {
-        "x": 852.0,
-        "y": -601.0000610351563
+        "x": 851.9994506835938,
+        "y": -601.0
     }
 }
 
@@ -9779,7 +9724,7 @@
     "m_Title": "has dynamic dissolve",
     "m_Position": {
         "x": -2559.000244140625,
-        "y": 655.0001220703125
+        "y": 655.0000610351563
     }
 }
 
@@ -9790,7 +9735,7 @@
     "m_Title": "has flow effect",
     "m_Position": {
         "x": -4415.00048828125,
-        "y": -30.000030517578126
+        "y": -30.000017166137697
     }
 }
 
