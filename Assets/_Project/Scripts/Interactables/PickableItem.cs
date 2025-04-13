@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 namespace AE
@@ -29,7 +30,10 @@ namespace AE
 
         public void Interact(IInteractionContext context)
         {
-            Pickup(context.InteractionController);
+            if (context.InteractionController != null)
+            {
+                Pickup(context.InteractionController);
+            }
         }
 
         private void Pickup(InteractionController controller)

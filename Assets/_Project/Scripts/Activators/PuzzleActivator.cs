@@ -4,7 +4,7 @@ namespace AE
 {
     public class PuzzleActivator : MonoBehaviour
     {
-        [SerializeField] private ICondition conditions;
+        [SerializeReference, SubclassSelector] private ICondition conditions;
         [SerializeReference, SubclassSelector] private IActivable result;
 
         private PuzzleContext context;

@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
       propertyPath: m_Name
-      value: SD_Prop_Chest_Skull_01 Variant
+      value: P_InteractableSkullChest
       objectReference: {fileID: 0}
     - target: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
       propertyPath: m_IsActive
@@ -63,5 +63,45 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 243489482984666516}
   m_SourcePrefab: {fileID: 100100000, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
+--- !u!1 &1708881385219259329 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 104968, guid: 53208521fffd8a242acf30e93a01b99a, type: 3}
+  m_PrefabInstance: {fileID: 1708881385219219913}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &243489482984666516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1708881385219259329}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prompt: {fileID: 11400000, guid: 26936fb230e12254a9a35e47e42642e7, type: 2}
+  conditions:
+    rid: 9194704756931035252
+  activateEffects:
+    rid: -2
+  deactivateEffects:
+    rid: 9194704756931035254
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 9194704756931035252
+      type: {class: SpecificItemCondition, ns: AE, asm: AE}
+      data:
+        requiredItem: {fileID: 11400000, guid: b0d112a629daa0c478b058b70dffc3a0, type: 2}
+    - rid: 9194704756931035254
+      type: {class: InteractionActivable, ns: AE, asm: AE}
+      data:
+        item: {fileID: 0}

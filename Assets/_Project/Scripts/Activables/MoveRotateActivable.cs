@@ -50,11 +50,11 @@ namespace AE
                 startRotation = element.localRotation.eulerAngles;
             }
 
-            Sequence sequence = DOTween.Sequence();
+            var sequence = DOTween.Sequence();
 
-            await sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
-            await sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
-            await sequence.SetEase(endEase);
+            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
+            _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
+            _ = sequence.SetEase(endEase);
 
             await sequence.AsyncWaitForCompletion();
         }

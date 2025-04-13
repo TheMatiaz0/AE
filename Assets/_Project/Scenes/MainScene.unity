@@ -5942,8 +5942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e335ae2c65ddb41a6d5501436544a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredPuzzles:
-  - {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
+  conditions:
+    rid: 9194704756931035247
   result:
     rid: 9194704756931035233
   references:
@@ -5957,6 +5957,10 @@ MonoBehaviour:
         - {fileID: 7701560846922928365}
         - {fileID: 7701560846922928364}
         objectsToDeactivate: []
+    - rid: 9194704756931035247
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
 --- !u!1001 &712495856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14286,9 +14290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e335ae2c65ddb41a6d5501436544a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredPuzzles:
-  - {fileID: 11400000, guid: 7e4ce5fe824b45645a09ec63b5f68a39, type: 2}
-  - {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
+  conditions:
+    rid: 9194704756931035242
   result:
     rid: 9194704756931035225
   references:
@@ -14300,6 +14303,20 @@ MonoBehaviour:
         objectsToActivate:
         - {fileID: 641956717}
         objectsToDeactivate: []
+    - rid: 9194704756931035242
+      type: {class: AllCondition, ns: AE, asm: AE}
+      data:
+        conditions:
+        - rid: 9194704756931035244
+        - rid: 9194704756931035243
+    - rid: 9194704756931035243
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
+    - rid: 9194704756931035244
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: 7e4ce5fe824b45645a09ec63b5f68a39, type: 2}
 --- !u!1001 &1793053359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16152,8 +16169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e335ae2c65ddb41a6d5501436544a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredPuzzles:
-  - {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
+  conditions:
+    rid: 9194704756931035245
   result:
     rid: 9194704756931035226
   references:
@@ -16165,6 +16182,10 @@ MonoBehaviour:
         objectsToActivate:
         - {fileID: 1538728162}
         objectsToDeactivate: []
+    - rid: 9194704756931035245
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: aaee086074421794eaab063b48b742a9, type: 2}
 --- !u!1001 &1973788195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17189,8 +17210,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00e335ae2c65ddb41a6d5501436544a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredPuzzles:
-  - {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
+  conditions:
+    rid: 9194704756931035246
   result:
     rid: 9194704756931035227
   references:
@@ -17203,6 +17224,10 @@ MonoBehaviour:
         - {fileID: 7701560846922928363}
         objectsToDeactivate:
         - {fileID: 925092706}
+    - rid: 9194704756931035246
+      type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
+      data:
+        requiredPuzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
 --- !u!1001 &2070554411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17668,6 +17693,50 @@ Transform:
   - {fileID: 439351948}
   m_Father: {fileID: 183798366}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2087068274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087068275}
+  - component: {fileID: 2087068276}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087068275
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087068274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2087068276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2087068274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262e38ddd5f084e40bae9f6a106ed652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2088643845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18685,38 +18754,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: deactivateEffects
-      value: 9194704756931035230
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: 'managedReferences[9194704756931035229]'
-      value: AE AE.InteractionActivable
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: 'managedReferences[9194704756931035230]'
-      value: AE AE.InteractionActivable
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: managedReferences[9194704756931035229].item
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: managedReferences[9194704756931035230].item
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: managedReferences[9194704756931035215].activables.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: 'managedReferences[9194704756931035215].activables.Array.data[0]'
-      value: 9194704756931035224
-      objectReference: {fileID: 0}
-    - target: {fileID: 1614613756988952107, guid: 6bb3589b4883c0b4eb7268df89f02fc4, type: 3}
-      propertyPath: 'managedReferences[9194704756931035215].activables.Array.data[1]'
-      value: 9194704756931035229
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -18751,5 +18788,6 @@ SceneRoots:
   - {fileID: 4854772046543381919}
   - {fileID: 349258708}
   - {fileID: 53426961}
+  - {fileID: 2087068275}
   - {fileID: 1291996491}
   - {fileID: 1239450411}

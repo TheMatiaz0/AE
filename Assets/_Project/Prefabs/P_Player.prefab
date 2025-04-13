@@ -185,10 +185,8 @@ MonoBehaviour:
   itemHolder: {fileID: 5917492521101208790}
   pickupAnimationDuration: 0.6
   pickupEaseType: 27
-  dropAnimationDuration: 0.2
-  dropEaseType: 12
-  dropForwardOffset: 2.5
-  dropVerticalOffset: -1.7
+  dropAnimationDuration: 0.6
+  dropEaseType: 27
 --- !u!114 &43881207142844131
 MonoBehaviour:
   m_ObjectHideFlags: 0

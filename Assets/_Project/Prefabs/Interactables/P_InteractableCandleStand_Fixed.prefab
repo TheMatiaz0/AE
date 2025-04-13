@@ -61,6 +61,10 @@ PrefabInstance:
       value: 9194704756931035228
       objectReference: {fileID: 0}
     - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+      propertyPath: deactivateEffects
+      value: 9194704756931035249
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
       propertyPath: 'managedReferences[9194704751843606594]'
       value: AE AE.MoveRotateActivable
       objectReference: {fileID: 0}
@@ -87,6 +91,14 @@ PrefabInstance:
     - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
       propertyPath: 'managedReferences[9194704756931035232]'
       value: AE AE.MoveRotateActivable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+      propertyPath: 'managedReferences[9194704756931035249]'
+      value: AE AE.InteractionActivable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+      propertyPath: managedReferences[9194704756931035249].item
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
       propertyPath: managedReferences[9194704751843606594].element

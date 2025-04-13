@@ -5,6 +5,8 @@ namespace AE
 {
     public class InteractionController : MonoBehaviour
     {
+        private const string DefaultLayerMask = "Default";
+
         [SerializeField]
         private Camera playerCamera;
 
@@ -20,12 +22,12 @@ namespace AE
         [Header("Item Drop Settings")]
         [SerializeField] private float dropAnimationDuration = 0.3f;
         [SerializeField] private Ease dropEaseType = Ease.InCubic;
-        [SerializeField] private float dropForwardOffset = 0.3f;
-        [SerializeField] private float dropVerticalOffset = -1.8f;
 
         private IInteractable currentTarget;
         private PickableItem heldItem;
         private InteractionContext context;
+        private Sequence dropSequence;
+        private Sequence pickupSequence;
 
         public PickableItem HeldItem => heldItem;
 
@@ -62,17 +64,31 @@ namespace AE
 
         public void AssignItemToHand(PickableItem item)
         {
+            if (pickupSequence.IsActive())
+            {
+                return;
+            }
+
             if (heldItem != null)
             {
                 DropItem();
             }
 
+            dropSequence?.Kill();
             heldItem = item;
             item.transform.SetParent(itemHolder);
 
-            var seq = DOTween.Sequence();
-            seq.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
-            seq.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
+            pickupSequence = CreatePickupSequence(item);
+        }
+
+        private Sequence CreatePickupSequence(PickableItem item)
+        {
+            var sequence = DOTween.Sequence();
+
+            sequence.Append(item.transform.DOLocalMove(item.HeldPosition, pickupAnimationDuration).SetEase(pickupEaseType));
+            sequence.Join(item.transform.DOLocalRotate(item.HeldRotation, pickupAnimationDuration).SetEase(pickupEaseType));
+
+            return sequence;
         }
 
         public void ConsumeHeldItem()
@@ -87,34 +103,55 @@ namespace AE
         {
             if (heldItem != null)
             {
+                pickupSequence?.Kill();
                 heldItem.transform.SetParent(null);
-
-                heldItem.transform.GetPositionAndRotation(out var startPosition, out var startRotation);
-
-                var dropPosition = transform.position + transform.forward * dropForwardOffset;
-                dropPosition.y = transform.position.y + dropVerticalOffset;
-
-                // TODO: do raycast check of ground
-                // TODO: don't allow items to fall off grids
 
                 var droppedItem = heldItem;
                 heldItem = null;
 
-                var lookDirection = -transform.forward;
-                lookDirection.y = 0f;
-
-                var targetRotation = Quaternion.LookRotation(lookDirection, Vector3.up);
-
-                var dropSequence = DOTween.Sequence();
-
-                dropSequence.Join(droppedItem.transform.DOMove(dropPosition, dropAnimationDuration).SetEase(dropEaseType));
-                dropSequence.Join(droppedItem.transform.DORotateQuaternion(targetRotation, dropAnimationDuration).SetEase(dropEaseType));
-
-                dropSequence.OnComplete(() =>
-                {
-                    droppedItem.Drop();
-                });
+                dropSequence = CreateDropSequence(droppedItem, GetDropPosition());
             }
+        }
+
+        private Vector3 GetDropPosition()
+        {
+            Vector3 forwardDrop = transform.position + transform.forward;
+            Vector3 initialDropPos = forwardDrop + Vector3.up * 1f;
+
+            Vector3 dropPosition;
+
+            if (Physics.Raycast(initialDropPos, Vector3.down, out var hit, 5f, LayerMask.GetMask(DefaultLayerMask)))
+            {
+                dropPosition = hit.point + Vector3.up * 0.05f;
+            }
+            else
+            {
+                Debug.LogWarning("No ground detected while dropping. Dropping at fallback position.");
+                dropPosition = transform.position + transform.forward * 0.3f + Vector3.down * 1.5f;
+            }
+
+            return dropPosition;
+        }
+
+
+        private Sequence CreateDropSequence(PickableItem item, Vector3 dropPosition)
+        {
+            var lookDirection = -transform.forward;
+            lookDirection.y = 0f;
+
+            var targetRotation = Quaternion.LookRotation(lookDirection, Vector3.up).eulerAngles;
+
+            var dropSequence = DOTween.Sequence();
+
+            dropSequence.Join(item.transform.DOJump(dropPosition, 1, 2, dropAnimationDuration).SetEase(dropEaseType));
+            dropSequence.Join(item.transform.DORotate(targetRotation, dropAnimationDuration).SetEase(dropEaseType));
+
+            dropSequence.OnComplete(() =>
+            {
+                item.Drop();
+            });
+
+            return dropSequence;
         }
 
         private void OnDestroy()
