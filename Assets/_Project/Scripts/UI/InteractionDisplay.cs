@@ -7,6 +7,7 @@ namespace AE
     {
         [SerializeField] private PlayerContext context;
         [SerializeField] private RectTransform indicator;
+        [SerializeField] private InteractablePrompt requiredPrompt;
 
         [Header("Start Settings")]
         [SerializeField] private float startDuration = 1.2f;
@@ -30,7 +31,7 @@ namespace AE
         {
             if (interactable != null)
             {
-                if (startTween.IsActive())
+                if (startTween.IsActive() || requiredPrompt != interactable.InteractionPrompt)
                 {
                     return;
                 }

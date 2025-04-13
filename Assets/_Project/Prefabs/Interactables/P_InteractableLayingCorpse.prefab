@@ -81,7 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6262de3b32125946a4382c7e8f4b95d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prompt: {fileID: 11400000, guid: 26936fb230e12254a9a35e47e42642e7, type: 2}
+  prompt: {fileID: 11400000, guid: c4ec03420aed061478ec7d8f0492f222, type: 2}
   conditions:
     rid: 9194704756931035218
   activateEffects:

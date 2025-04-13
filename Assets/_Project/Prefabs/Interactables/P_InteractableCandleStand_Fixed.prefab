@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: P_InteractableCandleStand_Fixed
       objectReference: {fileID: 0}
+    - target: {fileID: 3437928761635161644, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3643318255892834486, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
       propertyPath: result
       value: 9194704751843606595
@@ -313,7 +317,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8842420240572851742}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1799944376922649208, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+    - {fileID: 6309905918690113619, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+    - {fileID: 7559833992259199465, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
+    - {fileID: 9199089127494277488, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3437928761634917216, guid: b0bf13de659f6a64c8f4a179f2fd09ac, type: 3}
       insertIndex: -1

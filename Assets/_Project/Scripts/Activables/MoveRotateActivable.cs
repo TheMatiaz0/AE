@@ -19,6 +19,7 @@ namespace AE
 
         private Vector3? startPosition;
         private Vector3? startRotation;
+        private Sequence sequence;
 
         public void Activate(IContext context)
         {
@@ -35,6 +36,8 @@ namespace AE
             {
                 element.localEulerAngles = startRotation.Value;
             }
+
+            sequence?.Kill();
         }
 
         public async UniTask ActivateAsync(IContext context)
@@ -48,14 +51,19 @@ namespace AE
                 startRotation = element.localRotation.eulerAngles;
             }
 
-            var sequence = DOTween.Sequence();
+            if (sequence.IsActive())
+            {
+                sequence.Kill();
+            }
+
+            sequence = DOTween.Sequence();
 
             _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration)).SetLink(element.gameObject);
             _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration)).SetLink(element.gameObject);
             _ = sequence.SetEase(endEase);
 
-            await sequence.AsyncWaitForCompletion();
 
+            await sequence.AsyncWaitForCompletion();
         }
 
         public UniTask DeactivateAsync(IContext context)

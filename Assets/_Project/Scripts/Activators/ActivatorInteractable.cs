@@ -10,8 +10,7 @@ namespace AE
         [SerializeReference, SubclassSelector] private IActivable deactivateEffects;
 
         public bool IsInteractable { get; private set; } = true;
-
-        public InteractablePrompt GetInteractionPrompt() => prompt;
+        public InteractablePrompt InteractionPrompt => prompt;
 
         public void Interact(IInteractionContext context)
         {

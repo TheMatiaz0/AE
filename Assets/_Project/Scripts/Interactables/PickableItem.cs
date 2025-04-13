@@ -20,13 +20,9 @@ namespace AE
         public ItemReference ItemReference => itemData;
         public Vector3 HeldPosition => heldPosition;
         public Vector3 HeldRotation => heldRotation;
+        public InteractablePrompt InteractionPrompt => prompt;
 
         public bool IsInteractable { get; private set; } = true;
-
-        public InteractablePrompt GetInteractionPrompt()
-        {
-            return prompt;
-        }
 
         public void Interact(IInteractionContext context)
         {

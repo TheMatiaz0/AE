@@ -3,7 +3,7 @@ namespace AE
     public interface IInteractable
     {
         bool IsInteractable { get; }
-        InteractablePrompt GetInteractionPrompt();
+        InteractablePrompt InteractionPrompt { get; }
         void Interact(IInteractionContext context);
     }
 }
