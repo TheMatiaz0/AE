@@ -71,18 +71,14 @@ namespace AE
                 .OnComplete(() => bannerObject.SetActive(false));
         }
 
-        private Sequence AnimateBloodFlow()
+        private Tween AnimateBloodFlow()
         {
-            var flowSequence = DOTween.Sequence();
-
-            flowSequence.Join(DOTween.To(
+            return DOTween.To(
                 () => bloodDecal.size,
                 x => bloodDecal.size = x,
                 new Vector3(bloodScaleX, bloodDecal.size.y, bloodScaleZ),
                 flowDuration)
-                .SetEase(flowEase));
-
-            return flowSequence;
+                .SetEase(flowEase);
         }
 
 #if UNITY_EDITOR
