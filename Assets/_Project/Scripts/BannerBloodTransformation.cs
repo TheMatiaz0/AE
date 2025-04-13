@@ -67,7 +67,7 @@ namespace AE
 
             transformationSequence.Append(AnimateBloodFlow());
 
-            transformationSequence.Join(bannerObject.transform.DOScaleY(0, flowDuration))
+            transformationSequence.Join(bannerObject.transform.DOScaleY(0, flowDuration / 2))
                 .OnComplete(() => bannerObject.SetActive(false));
         }
 
