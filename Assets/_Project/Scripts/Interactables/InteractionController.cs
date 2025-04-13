@@ -73,14 +73,9 @@ namespace AE
 
         public void AssignItemToHand(PickableItem item)
         {
-            if (pickupSequence.IsActive())
+            if (pickupSequence.IsActive() || heldItem != null)
             {
                 return;
-            }
-
-            if (heldItem != null)
-            {
-                DropItem();
             }
 
             dropSequence?.Kill();
