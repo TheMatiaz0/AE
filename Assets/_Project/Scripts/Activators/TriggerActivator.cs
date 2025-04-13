@@ -5,7 +5,7 @@ namespace AE
     public class TriggerActivator : BaseActivator
     {
         [SerializeField]
-        private bool disableOnExit = false;
+        private bool disableTriggerOnExit = false;
 
         private bool wasActivated;
         private bool wasDeactivated;    
@@ -21,7 +21,7 @@ namespace AE
 
         private void OnTriggerExit(Collider other)
         {
-            if (disableOnExit)
+            if (disableTriggerOnExit)
             {
                 if (other.TryGetComponent<IPlayerContext>(out var context) && !wasDeactivated)
                 {

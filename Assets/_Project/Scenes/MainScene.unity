@@ -4914,6 +4914,7 @@ MonoBehaviour:
     rid: 9194704773212536922
   result:
     rid: 9194704781385400385
+  disableTriggerOnExit: 0
   references:
     version: 2
     RefIds:
@@ -12117,6 +12118,7 @@ MonoBehaviour:
     rid: 9194704781385400391
   result:
     rid: 9194704781385400402
+  disableTriggerOnExit: 0
   references:
     version: 2
     RefIds:
@@ -17120,6 +17122,7 @@ MonoBehaviour:
     rid: 9194704784177496065
   result:
     rid: 9194704784177496134
+  disableTriggerOnExit: 0
   references:
     version: 2
     RefIds:
