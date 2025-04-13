@@ -127,22 +127,24 @@ namespace AE
 
         private Vector3 GetDropPosition()
         {
-            Vector3 forwardDrop = transform.position + transform.forward;
-            Vector3 initialDropPos = forwardDrop + Vector3.up * 1f;
+            var forwardDrop = transform.position + transform.forward;
+            var initialDropPos = forwardDrop + Vector3.up * 1f;
 
-            Vector3 dropPosition;
+            var groundLayers = LayerMask.GetMask(DefaultLayerMask);
 
-            if (Physics.Raycast(initialDropPos, Vector3.down, out var hit, 5f, LayerMask.GetMask(DefaultLayerMask)))
+            if (Physics.Raycast(initialDropPos, Vector3.down, out var hit, 5f, groundLayers))
             {
-                dropPosition = hit.point + Vector3.up * 0.05f;
-            }
-            else
-            {
-                Debug.LogWarning("No ground detected while dropping. Dropping at fallback position.");
-                dropPosition = transform.position + transform.forward * 0.3f + Vector3.down * 1.5f;
+                return hit.point + Vector3.up * 0.05f;
             }
 
-            return dropPosition;
+            var fallbackPos = transform.position + transform.forward * 0.3f;
+            if (Physics.Raycast(fallbackPos + Vector3.up, Vector3.down, out hit, 50f, groundLayers))
+            {
+                return hit.point + Vector3.up * 0.05f;
+            }
+
+            Debug.LogWarning("No ground detected while dropping. Using default fallback position.");
+            return transform.position + transform.forward * 0.3f + Vector3.down * 1.5f;
         }
 
         private Sequence CreateDropSequence(PickableItem item, Vector3 dropPosition)
