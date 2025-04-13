@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1141877995896654063
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1499507025984597729}
+  - component: {fileID: 5732320357764003280}
+  - component: {fileID: 7597544310254348577}
+  m_Layer: 0
+  m_Name: P_DecalProjector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1499507025984597729
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141877995896654063}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.012670732, y: 0, z: 0, w: 0.9999197}
+  m_LocalPosition: {x: -14.33, y: 4.76, z: -26.21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6720988554710731987}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: -1.452, y: 0, z: 0}
+--- !u!114 &5732320357764003280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141877995896654063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 2100000, guid: c32ac378157ae5a4fae6d9828fc4f7b9, type: 2}
+  m_DrawDistance: 1000
+  m_FadeScale: 1
+  m_StartAngleFade: 44.695354
+  m_EndAngleFade: 177.82259
+  m_UVScale: {x: 1, y: 0.5}
+  m_UVBias: {x: 0, y: 0}
+  m_DecalLayerMask: 1
+  m_ScaleMode: 0
+  m_Offset: {x: 0.83735317, y: -2.6050391, z: 9.171545}
+  m_Size: {x: 6.6, y: 5.673873, z: 7.288292}
+  m_FadeFactor: 1
+--- !u!114 &7597544310254348577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1141877995896654063}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90aad3f8fc0f409429f012e55ab3cf81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bannerObject: {fileID: 0}
+  bannerCollider: {fileID: 0}
+  finalPosition: {fileID: 6720988554710731987}
+  dragDownDuration: 1
+  rotationDuration: 1
+  dragEase: 17
+  rotationEase: 17
+  bloodDecal: {fileID: 5732320357764003280}
+  flowDuration: 10
+  flowEase: 18
+--- !u!1 &6340882618053973503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6720988554710731987}
+  m_Layer: 0
+  m_Name: BannerDrop
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6720988554710731987
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6340882618053973503}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0.63, y: -1.26, z: 8.72}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1499507025984597729}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}

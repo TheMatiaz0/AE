@@ -39,14 +39,21 @@ namespace AE
             }
         }
 
+        private bool CanEnableIndicator(IInteractable interactable)
+        {
+            return startTween.IsActive() ||
+                !interactable.IsInteractable ||
+                requiredPrompt != interactable.InteractionPrompt ||
+                (context.InteractionController.HeldItem != null && context.InteractionController.HeldItem.InteractionPrompt == interactable.InteractionPrompt);
+        }
+
         private void EnableIndicator(IInteractable interactable)
         {
-            if (startTween.IsActive() || 
-                requiredPrompt != interactable.InteractionPrompt || 
-                (context.InteractionController.HeldItem != null && context.InteractionController.HeldItem.InteractionPrompt == interactable.InteractionPrompt))
+            if (CanEnableIndicator(interactable))
             {
                 return;
             }
+
             if (endTween.IsActive())
             {
                 endTween.Kill();

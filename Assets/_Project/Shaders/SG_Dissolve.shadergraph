@@ -2400,8 +2400,8 @@
     "m_ObjectId": "161e23d0ee0c4d7e83342432ea13114c",
     "m_Title": "dissolve tex",
     "m_Position": {
-        "x": -5076.00048828125,
-        "y": 447.0000305175781
+        "x": -5076.0,
+        "y": 447.0
     }
 }
 
@@ -5616,7 +5616,7 @@
     "m_ObjectId": "7181be332d2a45b9ac9f165b2a97cdd9",
     "m_Title": "Vertex A Opacity",
     "m_Position": {
-        "x": -2665.00048828125,
+        "x": -2665.0,
         "y": -558.0
     }
 }
@@ -7088,7 +7088,7 @@
     "m_ObjectId": "a40b70e97af144199bd4d2b993c12d5b",
     "m_Title": "Main Tex",
     "m_Position": {
-        "x": -3343.000244140625,
+        "x": -3343.0,
         "y": -283.0
     }
 }
@@ -8215,7 +8215,7 @@
     "m_ObjectId": "c2606a868f7144019df97e38168a2867",
     "m_Title": "step/subtract",
     "m_Position": {
-        "x": -1480.00048828125,
+        "x": -1480.0,
         "y": -81.0
     }
 }
@@ -8652,8 +8652,8 @@
     "m_ObjectId": "d1bdc30c2aa1472cb7f3e735dc74f1f2",
     "m_Title": "mask texture",
     "m_Position": {
-        "x": -449.00048828125,
-        "y": -316.00006103515627
+        "x": -449.0,
+        "y": -316.0
     }
 }
 
@@ -9599,8 +9599,8 @@
     "m_ObjectId": "f15131b15a554ecba014bffa792fc215",
     "m_Title": "has texture dissolve",
     "m_Position": {
-        "x": -1174.00048828125,
-        "y": -390.0000915527344
+        "x": -1174.0,
+        "y": -390.0
     }
 }
 
@@ -9649,7 +9649,7 @@
     "m_ObjectId": "f3e4b2c3daa04b36b4cad1244e798b44",
     "m_Title": "has mask",
     "m_Position": {
-        "x": 851.9994506835938,
+        "x": 852.0,
         "y": -601.0
     }
 }
@@ -9723,8 +9723,8 @@
     "m_ObjectId": "f68cc220603045368cabda0da5d78bc9",
     "m_Title": "has dynamic dissolve",
     "m_Position": {
-        "x": -2559.000244140625,
-        "y": 655.0000610351563
+        "x": -2559.0,
+        "y": 655.0
     }
 }
 
@@ -9734,8 +9734,8 @@
     "m_ObjectId": "f6cdd121c78448eeb05521dd4c33bc64",
     "m_Title": "has flow effect",
     "m_Position": {
-        "x": -4415.00048828125,
-        "y": -30.000017166137697
+        "x": -4415.0,
+        "y": -30.0
     }
 }
 
