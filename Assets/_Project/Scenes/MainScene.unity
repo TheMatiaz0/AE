@@ -15541,6 +15541,7 @@ MonoBehaviour:
       type: {class: MultiActivatorAsyncActivable, ns: AE, asm: AE}
       data:
         activables:
+        - rid: 9194704773212536925
         - rid: 9194704773212536921
         - rid: 9194704773212536923
     - rid: 9194704773212536921
@@ -15555,6 +15556,11 @@ MonoBehaviour:
       type: {class: PuzzleStateActivable, ns: AE, asm: AE}
       data:
         puzzleReference: {fileID: 11400000, guid: cef300d40fb0a2a47b200a0cd1f14c77, type: 2}
+    - rid: 9194704773212536925
+      type: {class: BehaviourEnabledActivable, ns: AE, asm: AE}
+      data:
+        objectsToActivate: []
+        objectsToDeactivate: []
 --- !u!1001 &1812581955
 PrefabInstance:
   m_ObjectHideFlags: 0

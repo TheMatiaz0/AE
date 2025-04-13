@@ -1,47 +1,14 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace AE
 {
-    public class BehaviourEnabledActivable : IActivable
+    [Serializable]
+    public class BehaviourEnabledActivable : GenericEnabledActivable<Behaviour>
     {
-        [SerializeField] private List<Behaviour> componentsToEnable;
-        [SerializeField] private List<Behaviour> componentsToDisable;
-
-        public void Activate(IContext context)
+        protected override void SetActive(Behaviour t, bool isActive)
         {
-            foreach (var component in componentsToEnable)
-            {
-                if (component != null && component)
-                {
-                    component.enabled = true;
-                }
-            }
-            foreach (var component in componentsToDisable)
-            {
-                if (component != null && component)
-                {
-                    component.enabled = false;
-                }
-            }
-        }
-
-        public void Deactivate(IContext context)
-        {
-            foreach (var component in componentsToEnable)
-            {
-                if (component != null && component)
-                {
-                    component.enabled = false;
-                }
-            }
-            foreach (var component in componentsToDisable)
-            {
-                if (component != null && component)
-                {
-                    component.enabled = true;
-                }
-            }
+            t.enabled = isActive;
         }
     }
 }
