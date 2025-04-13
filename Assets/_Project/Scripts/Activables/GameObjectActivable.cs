@@ -17,11 +17,25 @@ namespace AE
         {
             foreach (var obj in objectsToActivate)
             {
-                obj.SetActive(true);
+                if (obj != null && obj)
+                {
+                    obj.SetActive(true);
+                }
+                else
+                {
+                    Debug.LogWarning("Tried to activate a destroyed or missing object.");
+                }
             }
             foreach (var obj in objectsToDeactivate)
             {
-                obj.SetActive(false);
+                if (obj != null && obj)
+                {
+                    obj.SetActive(false);
+                }
+                else
+                {
+                    Debug.LogWarning("Tried to deactivate a destroyed or missing object.");
+                }
             }
         }
 

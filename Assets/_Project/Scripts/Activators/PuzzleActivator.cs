@@ -23,6 +23,7 @@ namespace AE
             }
 
             result?.Activate(context);
+            PuzzleSystem.Instance.OnPuzzleStepCompleted -= OnPuzzleCompleted;
         }
 
         private void OnDestroy()
