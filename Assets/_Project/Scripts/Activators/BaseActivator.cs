@@ -14,7 +14,7 @@ namespace AE
                 return;
             }
 
-            result.Activate(context);
+            result?.Activate(context);
         }
 
         public virtual void Deactivate(IContext context = null)
@@ -24,7 +24,7 @@ namespace AE
                 return;
             }
 
-            result.Deactivate(context);
+            result?.Deactivate(context);
         }
     }
 }

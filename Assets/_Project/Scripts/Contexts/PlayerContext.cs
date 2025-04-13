@@ -8,5 +8,6 @@ namespace AE
         private InteractionController interactionController;
 
         public InteractionController InteractionController => interactionController;
+        public PuzzleSystem PuzzleSystem => PuzzleSystem.Instance;
     }
 }

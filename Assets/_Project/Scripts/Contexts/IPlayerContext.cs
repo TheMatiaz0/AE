@@ -1,6 +1,6 @@
 namespace AE
 {
-    public interface IPlayerContext : IInteractionContext
+    public interface IPlayerContext : IInteractionContext, IPuzzleContext
     {
         
     }
