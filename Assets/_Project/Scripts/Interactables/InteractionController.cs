@@ -156,7 +156,7 @@ namespace AE
 
             var dropSequence = DOTween.Sequence();
 
-            dropSequence.Join(item.transform.DOJump(dropPosition, 1, 2, dropAnimationDuration).SetEase(dropEaseType));
+            dropSequence.Insert(0, item.transform.DOJump(dropPosition, 1, 2, dropAnimationDuration).SetEase(dropEaseType));
             dropSequence.Join(item.transform.DORotate(targetRotation, dropAnimationDuration).SetEase(dropEaseType))
                 .SetLink(this.gameObject);
 
