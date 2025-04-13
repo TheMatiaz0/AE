@@ -9,6 +9,7 @@ namespace AE
         [SerializeField] private AudioSource source;
         [SerializeField] private AudioClip clip;
         [SerializeField] private bool oneShot = true;
+        [SerializeField] private bool loop = false;
 
         public void Activate(IContext context)
         {
@@ -19,6 +20,7 @@ namespace AE
             else
             {
                 source.clip = clip;
+                source.loop = loop;
                 source.Play();
             }
         }

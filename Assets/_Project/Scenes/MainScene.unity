@@ -14917,8 +14917,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1554734800}
   - component: {fileID: 1554734801}
+  - component: {fileID: 1554734802}
   m_Layer: 0
-  m_Name: AmbiencePlayer
+  m_Name: Ambience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14951,10 +14952,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
+  m_PlayOnAwake: 0
+  m_Volume: 0.1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -15036,6 +15037,34 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1554734802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554734799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665de31617372474f8df8843e4081a87, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  conditions:
+    rid: -2
+  result:
+    rid: 9194704784177496138
+  references:
+    version: 2
+    RefIds:
+    - rid: -2
+      type: {class: , ns: , asm: }
+    - rid: 9194704784177496138
+      type: {class: PlaySoundActivable, ns: AE, asm: AE}
+      data:
+        source: {fileID: 1554734801}
+        clip: {fileID: 8300000, guid: 7016af0cae09b7249bf1fb19f376c088, type: 3}
+        oneShot: 0
+        loop: 1
 --- !u!1001 &1565848603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21768,6 +21797,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 55620348429036365, guid: eb1c0621060e21a4ebcdcdf5fd380c89, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1221725902589322400, guid: eb1c0621060e21a4ebcdcdf5fd380c89, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.865
