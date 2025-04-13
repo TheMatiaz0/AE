@@ -132,13 +132,13 @@ MonoBehaviour:
         element: {fileID: 1708881385219154841}
         endPosition: {x: 0.00869751, y: 1.2965631, z: -0.6890602}
         endRotation: {x: -45, y: 0, z: 0}
-        endDuration: 1
-        endEase: 2
+        endDuration: 0.6
+        endEase: 18
     - rid: 9194704773212536915
       type: {class: MoveRotateActivable, ns: AE, asm: AE}
       data:
         element: {fileID: 1708881385219154841}
         endPosition: {x: 0.00869751, y: 1.2965631, z: -0.6890602}
         endRotation: {x: 0, y: 0, z: 0}
-        endDuration: 1.5
-        endEase: 3
+        endDuration: 0.3
+        endEase: 18

@@ -37,14 +37,14 @@ namespace AE
             {
                 if (obj != null && obj)
                 {
-                    SetActive(obj,false);
+                    SetActive(obj, false);
                 }
             }
             foreach (var obj in objectsToDeactivate)
             {
                 if (obj != null && obj)
                 {
-                    SetActive(obj,true);
+                    SetActive(obj, true);
                 }
             }
         }

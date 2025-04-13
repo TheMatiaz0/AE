@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4830797525614563423
+--- !u!1001 &1741048882327230720
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -122,15 +122,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097874, guid: 3feee84b849c2c749bc87009292f3bbb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.823
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097874, guid: 3feee84b849c2c749bc87009292f3bbb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.428
+      value: 0.612
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097874, guid: 3feee84b849c2c749bc87009292f3bbb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.95
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097874, guid: 3feee84b849c2c749bc87009292f3bbb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -162,7 +162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4624227725711097875, guid: 3feee84b849c2c749bc87009292f3bbb, type: 3}
       propertyPath: m_Name
-      value: P_VFX_Flame CandleVariant
+      value: P_VFX_Flame CandleVariant 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

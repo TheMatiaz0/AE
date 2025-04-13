@@ -9,7 +9,7 @@ namespace AE
 
         private PuzzleContext context;
 
-        private void Awake()
+        private void Start()
         {
             context = new PuzzleContext(PuzzleSystem.Instance);
             PuzzleSystem.Instance.OnPuzzleStepCompleted += OnPuzzleCompleted;
