@@ -455,6 +455,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 409762, guid: ad2c8d0b8cdecbb4c90f0f7427a84a46, type: 3}
   m_PrefabInstance: {fileID: 32056241}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &39952369 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 43881207142844131, guid: eb1c0621060e21a4ebcdcdf5fd380c89, type: 3}
+  m_PrefabInstance: {fileID: 4854772046543381919}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 584c2a63adec5d64882797bf5868df45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &40361495
 GameObject:
   m_ObjectHideFlags: 0
@@ -14307,13 +14318,18 @@ MonoBehaviour:
       type: {class: AllCondition, ns: AE, asm: AE}
       data:
         conditions:
-        - rid: 9194704756931035244
-        - rid: 9194704756931035243
-    - rid: 9194704756931035243
+        - rid: 9194704766203592769
+    - rid: 9194704766203592769
+      type: {class: AllCondition, ns: AE, asm: AE}
+      data:
+        conditions:
+        - rid: 9194704766203592772
+        - rid: 9194704766203592771
+    - rid: 9194704766203592771
       type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
       data:
         requiredPuzzle: {fileID: 11400000, guid: fee2695f863d9c2468e9cbfc8050dcaf, type: 2}
-    - rid: 9194704756931035244
+    - rid: 9194704766203592772
       type: {class: SpecificPuzzleCondition, ns: AE, asm: AE}
       data:
         requiredPuzzle: {fileID: 11400000, guid: 7e4ce5fe824b45645a09ec63b5f68a39, type: 2}
@@ -17071,7 +17087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -366, y: -824}
+  m_AnchoredPosition: {x: -366, y: -834}
   m_SizeDelta: {x: 1616, y: 816}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &2053066868
@@ -17704,7 +17720,7 @@ GameObject:
   - component: {fileID: 2087068275}
   - component: {fileID: 2087068276}
   m_Layer: 0
-  m_Name: UIManager
+  m_Name: InteractionDisplayManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17737,6 +17753,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262e38ddd5f084e40bae9f6a106ed652, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  context: {fileID: 39952369}
+  indicator: {fileID: 2053066867}
+  startDuration: 0.5
+  startEase: 18
+  endPosition: {x: -366, y: -270}
+  endDuration: 0.5
+  endEase: 17
 --- !u!1001 &2088643845
 PrefabInstance:
   m_ObjectHideFlags: 0

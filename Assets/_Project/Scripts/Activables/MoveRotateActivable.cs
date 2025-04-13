@@ -17,6 +17,9 @@ namespace AE
         [SerializeField] private float endDuration;
         [SerializeField] private Ease endEase;
 
+        [SerializeField]
+        private bool shouldUseLocal = true;
+
         private Vector3? startPosition;
         private Vector3? startRotation;
 
@@ -52,8 +55,10 @@ namespace AE
 
             var sequence = DOTween.Sequence();
 
-            _ = sequence.Insert(0f, element.DOLocalMove(endPosition, endDuration));
-            _ = sequence.Insert(0f, element.DOLocalRotate(endRotation, endDuration));
+            _ = sequence.Insert(0f, shouldUseLocal ? 
+                element.DOLocalMove(endPosition, endDuration) : element.DOMove(endPosition, endDuration));
+            _ = sequence.Insert(0f, shouldUseLocal ? 
+                element.DOLocalRotate(endRotation, endDuration) : element.DORotate(endRotation, endDuration));
             _ = sequence.SetEase(endEase);
 
             await sequence.AsyncWaitForCompletion();

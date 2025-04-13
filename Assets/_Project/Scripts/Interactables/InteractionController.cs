@@ -1,4 +1,5 @@
 using DG.Tweening;
+using System;
 using UnityEngine;
 
 namespace AE
@@ -6,6 +7,8 @@ namespace AE
     public class InteractionController : MonoBehaviour
     {
         private const string DefaultLayerMask = "Default";
+
+        public event Action<IInteractable> OnTargetChanged;
 
         [SerializeField]
         private Camera playerCamera;
@@ -50,15 +53,18 @@ namespace AE
                 if (hit.collider.transform.parent.TryGetComponent<IInteractable>(out var interactable) || hit.collider.TryGetComponent<IInteractable>(out interactable))
                 {
                     currentTarget = interactable;
+                    OnTargetChanged?.Invoke(interactable);
                 }
                 else
                 {
                     currentTarget = null;
+                    OnTargetChanged?.Invoke(null);
                 }
             }
             else
             {
                 currentTarget = null;
+                OnTargetChanged?.Invoke(null);
             }
         }
 
