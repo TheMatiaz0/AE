@@ -31,36 +31,48 @@ namespace AE
         {
             if (interactable != null)
             {
-                if (startTween.IsActive() || requiredPrompt != interactable.InteractionPrompt)
-                {
-                    return;
-                }
-                if (endTween.IsActive())
-                {
-                    endTween.Kill();
-                }
-
-                startTween = indicator.DOAnchorPos(endPosition, endDuration)
-                    .SetEase(startEase)
-                    .OnStart(EnableObject)
-                    .SetLink(this.gameObject);
+                EnableIndicator(interactable);
             }
             else
             {
-                if (endTween.IsActive())
-                {
-                    return;
-                }
-                if (startTween.IsActive())
-                {
-                    startTween.Kill();
-                }
-
-                endTween = indicator.DOAnchorPos(startPosition, startDuration)
-                    .SetEase(endEase)
-                    .OnComplete(DisableObject)
-                    .SetLink(this.gameObject);
+                DisableIndicator();
             }
+        }
+
+        private void EnableIndicator(IInteractable interactable)
+        {
+            if (startTween.IsActive() || 
+                requiredPrompt != interactable.InteractionPrompt || 
+                (context.InteractionController.HeldItem != null && context.InteractionController.HeldItem.InteractionPrompt == interactable.InteractionPrompt))
+            {
+                return;
+            }
+            if (endTween.IsActive())
+            {
+                endTween.Kill();
+            }
+
+            startTween = indicator.DOAnchorPos(endPosition, endDuration)
+                .SetEase(startEase)
+                .OnStart(EnableObject)
+                .SetLink(this.gameObject);
+        }
+
+        private void DisableIndicator()
+        {
+            if (endTween.IsActive())
+            {
+                return;
+            }
+            if (startTween.IsActive())
+            {
+                startTween.Kill();
+            }
+
+            endTween = indicator.DOAnchorPos(startPosition, startDuration)
+                .SetEase(endEase)
+                .OnComplete(DisableObject)
+                .SetLink(this.gameObject);
         }
 
         private void EnableObject()

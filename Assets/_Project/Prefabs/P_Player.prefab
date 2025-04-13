@@ -82,17 +82,17 @@ MonoBehaviour:
   cameraHolder: {fileID: 804060569049388052}
   playerCamera: {fileID: 4625611085736199078}
   enableCameraRotationSway: 1
-  rotationSwayAmount: 10
-  rotationSwayLimit: 16
+  rotationSwayAmount: 7
+  rotationSwayLimit: 14
   rotationSwaySmoothness: 10
   inverseRotationSway: 1
   enableMovementSway: 1
-  movementSwayAmount: 2
-  movementSwayLimit: 3
-  movementSwaySmoothness: 8.47
+  movementSwayAmount: 1.5
+  movementSwayLimit: 2.5
+  movementSwaySmoothness: 12
   inverseMovementSway: 0
   enableHeadbob: 1
-  bobAmplitude: 0.015
+  bobAmplitude: 0.005
   bobFrequency: 10
   headbobSmoothing: 12
   headbobTiltAmount: 1
