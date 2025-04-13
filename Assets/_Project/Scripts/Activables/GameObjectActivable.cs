@@ -21,20 +21,12 @@ namespace AE
                 {
                     obj.SetActive(true);
                 }
-                else
-                {
-                    Debug.LogWarning("Tried to activate a destroyed or missing object.");
-                }
             }
             foreach (var obj in objectsToDeactivate)
             {
                 if (obj != null && obj)
                 {
                     obj.SetActive(false);
-                }
-                else
-                {
-                    Debug.LogWarning("Tried to deactivate a destroyed or missing object.");
                 }
             }
         }
@@ -43,11 +35,17 @@ namespace AE
         {
             foreach (var obj in objectsToActivate)
             {
-                obj.SetActive(false);
+                if (obj != null && obj)
+                {
+                    obj.SetActive(false);
+                }
             }
             foreach (var obj in objectsToDeactivate)
             {
-                obj.SetActive(true);
+                if (obj != null && obj)
+                {
+                    obj.SetActive(true);
+                }
             }
         }
     }
