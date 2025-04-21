@@ -16,11 +16,6 @@ Unity version: 6000.0.41f1
 - Raycast detection - Detects item that can be picked up or puzzle element that can be interacted (ex. candle stand that you can fix).
 - URP Decals - used Unity URP's Decals system to setup blood puddles that affect environment.
 
-## Assets used
-- [DOTween](https://github.com/Demigiant/dotween)
-- [UniTask](https://github.com/Cysharp/UniTask)
-- [SerializeReferenceExtensions](https://github.com/mackysoft/Unity-SerializeReferenceExtensions)
-
 ## Controls
 All controls are created with [New Input System](https://docs.unity3d.com/Packages/com.unity.inputsystem@1.14/manual/index.html) from Unity.
 | Action | Key |
@@ -42,3 +37,8 @@ The door behind you will open, allowing you to start the game again.
 ## Known Issues
 - Sometimes items can glitch while throwing and picking next to each other (causing them to be unresponsive).
 - Hands can get stuck visually when raycast element in front of player gets disabled.
+
+## Assets used
+- [DOTween](https://github.com/Demigiant/dotween)
+- [UniTask](https://github.com/Cysharp/UniTask)
+- [SerializeReferenceExtensions](https://github.com/mackysoft/Unity-SerializeReferenceExtensions)
