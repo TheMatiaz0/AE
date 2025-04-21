@@ -2,7 +2,7 @@
 
 ![AE Gameplay](/AE_Gameplay.gif)
 
-A first-person horror puzzle game with claustrophobic camera and environment-based puzzles. Created as Unity developer recruitment task in April 2025.
+A first-person horror puzzle game with claustrophobic camera and environment-based puzzles. Created as Unity Developer recruitment task in April 2025.
 
 The solution here is very abstract, allowing designers to quickly create all kinds of puzzles they desire based on this toolkit.
 
