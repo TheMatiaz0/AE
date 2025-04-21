@@ -14,6 +14,7 @@ Unity version: 6000.0.41f1
 - Jumpscare examples - There are multiple chain reactions with UniTask and DOTween that are based on the Activator/Activable system.
 - Inventory system - Item can be picked up from the ground, placed into socket or drop to ground.
 - Raycast detection - Detects item that can be picked up or puzzle element that can be interacted (ex. candle stand that you can fix).
+- URP Decals - used Unity URP's Decals system to setup blood puddles that affect environment.
 
 ## Assets used
 - [DOTween](https://github.com/Demigiant/dotween)
